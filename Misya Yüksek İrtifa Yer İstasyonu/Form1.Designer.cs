@@ -54,7 +54,7 @@
             label7 = new Label();
             label6 = new Label();
             label9 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            glControl1 = new OpenTK.WinForms.GLControl();
             ((System.ComponentModel.ISupportInitialize)videoBox).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -245,7 +245,7 @@
             groupBox3.Controls.Add(label6);
             groupBox3.Location = new Point(12, 103);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(316, 322);
+            groupBox3.Size = new Size(316, 146);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Veri";
@@ -321,19 +321,26 @@
             label9.TabIndex = 13;
             label9.Text = "NON-CONNECTED";
             // 
-            // dateTimePicker1
+            // glControl1
             // 
-            dateTimePicker1.Location = new Point(174, 647);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(15, 23);
-            dateTimePicker1.TabIndex = 14;
+            glControl1.API = OpenTK.Windowing.Common.ContextAPI.OpenGL;
+            glControl1.APIVersion = new Version(3, 3, 0, 0);
+            glControl1.Flags = OpenTK.Windowing.Common.ContextFlags.Default;
+            glControl1.IsEventDriven = true;
+            glControl1.Location = new Point(1143, 477);
+            glControl1.Name = "glControl1";
+            glControl1.Profile = OpenTK.Windowing.Common.ContextProfile.Core;
+            glControl1.Size = new Size(316, 284);
+            glControl1.TabIndex = 15;
+            glControl1.Text = "glControl1";
+            glControl1.Click += glControl1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1471, 773);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(glControl1);
             Controls.Add(label9);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -385,6 +392,6 @@
         private Label label8;
         private Label label7;
         private Label label6;
-        private DateTimePicker dateTimePicker1;
+        private OpenTK.WinForms.GLControl glControl1;
     }
 }

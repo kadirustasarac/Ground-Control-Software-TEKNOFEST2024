@@ -147,5 +147,10 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         {
 
         }
+
+        private void glControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
