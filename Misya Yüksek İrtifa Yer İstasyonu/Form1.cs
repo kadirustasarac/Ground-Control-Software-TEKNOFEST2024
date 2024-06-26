@@ -8,6 +8,8 @@ using System.Net;
 using System.Diagnostics;
 using GMap.NET;
 using System.Xml.Linq;
+using OpenTK.WinForms;
+using GMap.NET.MapProviders;
 
 
 
@@ -21,6 +23,10 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         private SerialPort gorevPort;
         private SerialPort hakemPort;
 
+        private bool roketPortDurum;
+        private bool gorevPortDurum;
+        private bool hakemPortDurum;
+
 
 
         //Video aktarım değişkenleri
@@ -32,6 +38,11 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         byte[] olusturalacak_paket = new byte[78];
 
         GMap.NET.WindowsForms.GMapControl gmap;
+
+        private GLControl glControl;
+        private float angle = 0.0f;
+        private ObjLoader objLoader;
+
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +50,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
             richTextBox2.ReadOnly = true;
             richTextBox3.ReadOnly = true;
             //-------------------------------------------------------------------------------------------------
-            gmap = gMapControl1;
+            gmap = gMapControl2;
             gmap.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
             //gmap.Dock = DockStyle.Fill;
             gmap.CanDragMap = false;
@@ -65,35 +76,62 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBoxCOM.SelectedItem != null)
+            if (!roketPortDurum)
             {
-                // Seçilen COM port adını alın
-                string selectedPort = comboBoxCOM.SelectedItem.ToString();
-                int baundRate = Convert.ToInt32(comboBox1.Text);
-
-                // SerialPort oluşturun ve bağlantıyı açın
-                roketPort = new SerialPort(selectedPort, baundRate); // COM port adı ve baud rate (9600) girilir
-
-                try
+                if (comboBoxCOM.SelectedItem != null)
                 {
-                    roketPort.Open();
+                    // Seçilen COM port adını alın
+                    string selectedPort = comboBoxCOM.SelectedItem.ToString();
+                    int baundRate = Convert.ToInt32(comboBox1.Text);
+
+                    // SerialPort oluşturun ve bağlantıyı açın
+                    roketPort = new SerialPort(selectedPort, baundRate); // COM port adı ve baud rate (9600) girilir
+
+                    try
+                    {
+                        roketPort.Open();
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Serial Port açılırken hata oluştu ! Hata: \n " + error.ToString());
+                    }
+
+
+                    // Veri alımı için bir event handler ekle. Her data geldiğinde tetiklenecek
+                    roketPort.DataReceived += RoketSerial_Handler;
+
+                    if (roketPort.IsOpen)
+                    {
+                        // Bağlantı durumunu güncelleyin
+                        roketPortDurum = true;
+                        label9.Text = "BAĞLANDI";
+                        label9.BackColor = Color.Green;
+                        button1.Text = "Bağlantıyı Kes";
+
+                    }
                 }
-                catch (Exception error)
+                else
                 {
-                    MessageBox.Show("Serial Port açılırken hata oluştu ! Hata: \n " + error.ToString());
+                    MessageBox.Show("Lütfen bir COM port seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-
-                // Veri alımı için bir event handler ekle. Her data geldiğinde tetiklenecek
-                roketPort.DataReceived += RoketSerial_Handler;
-
-                // Bağlantı durumunu güncelleyin
-                label9.Text = "BAĞLANDI";
-                label9.BackColor = Color.Green;
             }
             else
             {
-                MessageBox.Show("Lütfen bir COM port seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                try
+                {
+                    roketPort.Close();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("HATA !" + error);
+                }
+                if (!roketPort.IsOpen)
+                {
+                    label9.Text = "BAĞLANTI KESİLDİ";
+                    label9.BackColor = Color.Red;
+                    button1.Text = "Bağlan";
+                    roketPortDurum = false;
+                }
             }
         }
         private void RoketSerial_Handler(object sender, SerialDataReceivedEventArgs e)
@@ -176,10 +214,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            gmap.Position = new PointLatLng(Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox3.Text));
-            gmap.Zoom = 5;
-            gmap.Update();
-            gmap.Refresh();
+
         }
 
         private void glControl1_Click(object sender, EventArgs e)
@@ -219,12 +254,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int zoomLevel = Convert.ToInt32(textBox5.Text);
-            gmap.MinZoom = zoomLevel;
-            gmap.MaxZoom = zoomLevel;
-            gmap.Zoom = zoomLevel;
-            gmap.Update();
-            gmap.Refresh();
+
         }
 
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
@@ -480,6 +510,61 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         private void label30_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            gmap.Position = new PointLatLng(Convert.ToDouble(textBox10.Text), Convert.ToDouble(textBox9.Text));
+            gmap.Zoom = 5;
+            gmap.Update();
+            gmap.Refresh();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            int zoomLevel = Convert.ToInt32(textBox8.Text);
+            gmap.MinZoom = zoomLevel;
+            gmap.MaxZoom = zoomLevel;
+            gmap.Zoom = zoomLevel;
+            gmap.Update();
+            gmap.Refresh();
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            switch (comboBox6.SelectedItem.ToString()) 
+            {
+                case "Uydu":
+                    gmap.MapProvider = GMapProviders.GoogleSatelliteMap;
+                    break;
+                case "Hibrit":
+                    gmap.MapProvider = GMapProviders.GoogleHybridMap;
+                    break;
+                case "Terrain":
+                    gmap.MapProvider = GMapProviders.GoogleTerrainMap;
+                    break;
+                case "GMAP":
+                    gmap.MapProvider = GMapProviders.GoogleMap;
+                    break;
+                default:
+                    MessageBox.Show("allani si");
+                    break;
+            }
         }
     }
 }
