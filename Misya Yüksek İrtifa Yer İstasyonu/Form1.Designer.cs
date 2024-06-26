@@ -33,9 +33,7 @@
             comboBoxCOM = new ComboBox();
             labelStatue = new Label();
             groupBox3 = new GroupBox();
-            comboBox6 = new ComboBox();
-            button19 = new Button();
-            label61 = new Label();
+            panel3 = new Panel();
             label56 = new Label();
             label55 = new Label();
             label54 = new Label();
@@ -48,20 +46,11 @@
             label47 = new Label();
             label46 = new Label();
             label45 = new Label();
-            textBox8 = new TextBox();
-            label41 = new Label();
             label38 = new Label();
-            button16 = new Button();
             label37 = new Label();
-            textBox9 = new TextBox();
             label36 = new Label();
-            label42 = new Label();
             label35 = new Label();
-            label43 = new Label();
-            gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
-            textBox10 = new TextBox();
             label11 = new Label();
-            button17 = new Button();
             label10 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -69,23 +58,30 @@
             label31 = new Label();
             label30 = new Label();
             label6 = new Label();
-            label9 = new Label();
             glControl1 = new OpenTK.WinForms.GLControl();
-            menuStrip1 = new MenuStrip();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            verilerToolStripMenuItem = new ToolStripMenuItem();
+            label9 = new Label();
             label13 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            label29 = new Label();
-            label28 = new Label();
-            label27 = new Label();
             groupBox8 = new GroupBox();
-            label22 = new Label();
+            groupBox15 = new GroupBox();
+            button19 = new Button();
+            richTextBox4 = new RichTextBox();
+            groupBox16 = new GroupBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            label41 = new Label();
+            label42 = new Label();
+            label43 = new Label();
+            button24 = new Button();
+            label61 = new Label();
+            pictureBox6 = new PictureBox();
+            groupBox13 = new GroupBox();
+            groupBox14 = new GroupBox();
+            button14 = new Button();
             button8 = new Button();
             richTextBox3 = new RichTextBox();
             groupBox9 = new GroupBox();
-            button14 = new Button();
             comboBox5 = new ComboBox();
             label23 = new Label();
             label24 = new Label();
@@ -93,25 +89,18 @@
             button9 = new Button();
             comboBox4 = new ComboBox();
             label26 = new Label();
-            groupBox6 = new GroupBox();
-            label17 = new Label();
-            button6 = new Button();
-            richTextBox2 = new RichTextBox();
-            groupBox7 = new GroupBox();
-            comboBox3 = new ComboBox();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            button7 = new Button();
-            comboBox2 = new ComboBox();
-            label21 = new Label();
+            pictureBox5 = new PictureBox();
+            label29 = new Label();
+            label28 = new Label();
+            label27 = new Label();
             groupBox4 = new GroupBox();
-            label16 = new Label();
-            button5 = new Button();
             richTextBox1 = new RichTextBox();
+            groupBox2 = new GroupBox();
+            button5 = new Button();
             groupBox5 = new GroupBox();
             label15 = new Label();
             comboBox1 = new ComboBox();
+            pictureBox4 = new PictureBox();
             tabPage3 = new TabPage();
             groupBox11 = new GroupBox();
             label60 = new Label();
@@ -168,22 +157,34 @@
             button2 = new Button();
             videoBox = new PictureBox();
             tabPage6 = new TabPage();
-            pictureBox1 = new PictureBox();
-            button10 = new Button();
             panel1 = new Panel();
+            label22 = new Label();
+            label16 = new Label();
+            button16 = new Button();
             button13 = new Button();
+            button10 = new Button();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             button12 = new Button();
+            label68 = new Label();
+            label67 = new Label();
             button11 = new Button();
+            pictureBox3 = new PictureBox();
             groupBox3.SuspendLayout();
-            menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox8.SuspendLayout();
+            groupBox15.SuspendLayout();
+            groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            groupBox13.SuspendLayout();
+            groupBox14.SuspendLayout();
             groupBox9.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             groupBox4.SuspendLayout();
+            groupBox2.SuspendLayout();
             groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             tabPage3.SuspendLayout();
             groupBox11.SuspendLayout();
             groupBox12.SuspendLayout();
@@ -194,8 +195,10 @@
             tabPage5.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)videoBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -204,7 +207,7 @@
             button1.Name = "button1";
             button1.Size = new Size(259, 39);
             button1.TabIndex = 0;
-            button1.Text = "Bağlan";
+            button1.Text = "Baglan";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -223,7 +226,7 @@
             comboBoxCOM.FormattingEnabled = true;
             comboBoxCOM.Location = new Point(115, 33);
             comboBoxCOM.Name = "comboBoxCOM";
-            comboBoxCOM.Size = new Size(147, 23);
+            comboBoxCOM.Size = new Size(147, 32);
             comboBoxCOM.TabIndex = 2;
             comboBoxCOM.SelectedIndexChanged += comboBoxCOM_SelectedIndexChanged;
             // 
@@ -231,17 +234,16 @@
             // 
             labelStatue.AutoSize = true;
             labelStatue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            labelStatue.Location = new Point(8, 275);
+            labelStatue.Location = new Point(8, 162);
             labelStatue.Name = "labelStatue";
             labelStatue.Size = new Size(62, 21);
             labelStatue.TabIndex = 3;
             labelStatue.Text = "STATUE";
+            labelStatue.Click += labelStatue_Click;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(comboBox6);
-            groupBox3.Controls.Add(button19);
-            groupBox3.Controls.Add(label61);
+            groupBox3.Controls.Add(panel3);
             groupBox3.Controls.Add(label56);
             groupBox3.Controls.Add(label55);
             groupBox3.Controls.Add(label54);
@@ -254,20 +256,11 @@
             groupBox3.Controls.Add(label47);
             groupBox3.Controls.Add(label46);
             groupBox3.Controls.Add(label45);
-            groupBox3.Controls.Add(textBox8);
-            groupBox3.Controls.Add(label41);
             groupBox3.Controls.Add(label38);
-            groupBox3.Controls.Add(button16);
             groupBox3.Controls.Add(label37);
-            groupBox3.Controls.Add(textBox9);
             groupBox3.Controls.Add(label36);
-            groupBox3.Controls.Add(label42);
             groupBox3.Controls.Add(label35);
-            groupBox3.Controls.Add(label43);
-            groupBox3.Controls.Add(gMapControl2);
-            groupBox3.Controls.Add(textBox10);
             groupBox3.Controls.Add(label11);
-            groupBox3.Controls.Add(button17);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label7);
@@ -275,387 +268,260 @@
             groupBox3.Controls.Add(label31);
             groupBox3.Controls.Add(label30);
             groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(glControl1);
             groupBox3.Location = new Point(19, 25);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(693, 599);
+            groupBox3.Size = new Size(693, 838);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Roket Verileri";
             // 
-            // comboBox6
+            // panel3
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Uydu", "Hibrit", "Terrain", "GMAP" });
-            comboBox6.Location = new Point(399, 509);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(100, 23);
-            comboBox6.TabIndex = 33;
-            // 
-            // button19
-            // 
-            button19.Location = new Point(517, 508);
-            button19.Name = "button19";
-            button19.Size = new Size(75, 28);
-            button19.TabIndex = 32;
-            button19.Text = "Değiştir";
-            button19.UseVisualStyleBackColor = true;
-            button19.Click += button19_Click;
-            // 
-            // label61
-            // 
-            label61.AutoSize = true;
-            label61.Location = new Point(324, 512);
-            label61.Name = "label61";
-            label61.Size = new Size(42, 15);
-            label61.TabIndex = 31;
-            label61.Text = "Harita:";
+            panel3.Location = new Point(17, 456);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(655, 362);
+            panel3.TabIndex = 56;
             // 
             // label56
             // 
             label56.AutoSize = true;
             label56.Font = new Font("Segoe UI", 14.25F);
-            label56.Location = new Point(161, 443);
+            label56.Location = new Point(628, 392);
             label56.Name = "label56";
             label56.Size = new Size(44, 25);
-            label56.TabIndex = 30;
+            label56.TabIndex = 55;
             label56.Text = "null";
             // 
             // label55
             // 
             label55.AutoSize = true;
             label55.Font = new Font("Segoe UI", 14.25F);
-            label55.Location = new Point(161, 391);
+            label55.Location = new Point(396, 392);
             label55.Name = "label55";
             label55.Size = new Size(44, 25);
-            label55.TabIndex = 29;
+            label55.TabIndex = 54;
             label55.Text = "null";
             // 
             // label54
             // 
             label54.AutoSize = true;
             label54.Font = new Font("Segoe UI", 14.25F);
-            label54.Location = new Point(161, 343);
+            label54.Location = new Point(628, 367);
             label54.Name = "label54";
             label54.Size = new Size(44, 25);
-            label54.TabIndex = 28;
+            label54.TabIndex = 53;
             label54.Text = "null";
             // 
             // label53
             // 
             label53.AutoSize = true;
             label53.Font = new Font("Segoe UI", 14.25F);
-            label53.Location = new Point(161, 318);
+            label53.Location = new Point(628, 342);
             label53.Name = "label53";
             label53.Size = new Size(44, 25);
-            label53.TabIndex = 27;
+            label53.TabIndex = 52;
             label53.Text = "null";
             // 
             // label52
             // 
             label52.AutoSize = true;
             label52.Font = new Font("Segoe UI", 14.25F);
-            label52.Location = new Point(161, 293);
+            label52.Location = new Point(628, 317);
             label52.Name = "label52";
             label52.Size = new Size(44, 25);
-            label52.TabIndex = 26;
+            label52.TabIndex = 51;
             label52.Text = "null";
             // 
             // label51
             // 
             label51.AutoSize = true;
             label51.Font = new Font("Segoe UI", 14.25F);
-            label51.Location = new Point(161, 232);
+            label51.Location = new Point(396, 367);
             label51.Name = "label51";
             label51.Size = new Size(44, 25);
-            label51.TabIndex = 25;
+            label51.TabIndex = 50;
             label51.Text = "null";
             // 
             // label50
             // 
             label50.AutoSize = true;
             label50.Font = new Font("Segoe UI", 14.25F);
-            label50.Location = new Point(161, 207);
+            label50.Location = new Point(396, 342);
             label50.Name = "label50";
             label50.Size = new Size(44, 25);
-            label50.TabIndex = 24;
+            label50.TabIndex = 49;
             label50.Text = "null";
             // 
             // label49
             // 
             label49.AutoSize = true;
             label49.Font = new Font("Segoe UI", 14.25F);
-            label49.Location = new Point(161, 182);
+            label49.Location = new Point(396, 317);
             label49.Name = "label49";
             label49.Size = new Size(44, 25);
-            label49.TabIndex = 23;
+            label49.TabIndex = 48;
             label49.Text = "null";
             // 
             // label48
             // 
             label48.AutoSize = true;
             label48.Font = new Font("Segoe UI", 14.25F);
-            label48.Location = new Point(161, 116);
+            label48.Location = new Point(172, 392);
             label48.Name = "label48";
             label48.Size = new Size(44, 25);
-            label48.TabIndex = 22;
+            label48.TabIndex = 47;
             label48.Text = "null";
             // 
             // label47
             // 
             label47.AutoSize = true;
             label47.Font = new Font("Segoe UI", 14.25F);
-            label47.Location = new Point(161, 91);
+            label47.Location = new Point(172, 367);
             label47.Name = "label47";
             label47.Size = new Size(44, 25);
-            label47.TabIndex = 21;
+            label47.TabIndex = 46;
             label47.Text = "null";
             // 
             // label46
             // 
             label46.AutoSize = true;
             label46.Font = new Font("Segoe UI", 14.25F);
-            label46.Location = new Point(161, 66);
+            label46.Location = new Point(172, 342);
             label46.Name = "label46";
             label46.Size = new Size(44, 25);
-            label46.TabIndex = 20;
+            label46.TabIndex = 45;
             label46.Text = "null";
             // 
             // label45
             // 
             label45.AutoSize = true;
             label45.Font = new Font("Segoe UI", 14.25F);
-            label45.Location = new Point(161, 41);
+            label45.Location = new Point(172, 317);
             label45.Name = "label45";
             label45.Size = new Size(44, 25);
-            label45.TabIndex = 19;
+            label45.TabIndex = 44;
             label45.Text = "null";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(399, 474);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(71, 23);
-            textBox8.TabIndex = 18;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Location = new Point(324, 477);
-            label41.Name = "label41";
-            label41.Size = new Size(69, 15);
-            label41.TabIndex = 17;
-            label41.Text = "Zoom Level";
             // 
             // label38
             // 
             label38.AutoSize = true;
             label38.Font = new Font("Segoe UI", 14.25F);
-            label38.Location = new Point(6, 443);
+            label38.Location = new Point(473, 392);
             label38.Name = "label38";
             label38.Size = new Size(74, 25);
-            label38.TabIndex = 13;
+            label38.TabIndex = 43;
             label38.Text = "Durum:";
-            // 
-            // button16
-            // 
-            button16.Location = new Point(517, 474);
-            button16.Name = "button16";
-            button16.Size = new Size(75, 28);
-            button16.TabIndex = 16;
-            button16.Text = "Zoom";
-            button16.UseVisualStyleBackColor = true;
-            button16.Click += button16_Click;
             // 
             // label37
             // 
             label37.AutoSize = true;
             label37.Font = new Font("Segoe UI", 14.25F);
-            label37.Location = new Point(6, 391);
+            label37.Location = new Point(241, 392);
             label37.Name = "label37";
             label37.Size = new Size(42, 25);
-            label37.TabIndex = 12;
+            label37.TabIndex = 42;
             label37.Text = "Açı:";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(399, 419);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
-            textBox9.TabIndex = 15;
             // 
             // label36
             // 
             label36.AutoSize = true;
             label36.Font = new Font("Segoe UI", 14.25F);
-            label36.Location = new Point(6, 343);
+            label36.Location = new Point(473, 367);
             label36.Name = "label36";
             label36.Size = new Size(72, 25);
-            label36.TabIndex = 11;
+            label36.TabIndex = 41;
             label36.Text = "İvme Z:";
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Location = new Point(324, 422);
-            label42.Name = "label42";
-            label42.Size = new Size(47, 15);
-            label42.TabIndex = 14;
-            label42.Text = "Boylam";
             // 
             // label35
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 14.25F);
-            label35.Location = new Point(6, 318);
+            label35.Location = new Point(473, 342);
             label35.Name = "label35";
             label35.Size = new Size(72, 25);
-            label35.TabIndex = 10;
+            label35.TabIndex = 40;
             label35.Text = "İvme Y:";
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Location = new Point(324, 391);
-            label43.Name = "label43";
-            label43.Size = new Size(40, 15);
-            label43.TabIndex = 8;
-            label43.Text = "Enlem";
-            label43.Click += label43_Click;
-            // 
-            // gMapControl2
-            // 
-            gMapControl2.Bearing = 0F;
-            gMapControl2.CanDragMap = true;
-            gMapControl2.EmptyTileColor = Color.Navy;
-            gMapControl2.GrayScaleMode = false;
-            gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            gMapControl2.LevelsKeepInMemory = 5;
-            gMapControl2.Location = new Point(310, 22);
-            gMapControl2.MarkersEnabled = true;
-            gMapControl2.MaxZoom = 2;
-            gMapControl2.MinZoom = 2;
-            gMapControl2.MouseWheelZoomEnabled = true;
-            gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            gMapControl2.Name = "gMapControl2";
-            gMapControl2.NegativeMode = false;
-            gMapControl2.PolygonsEnabled = true;
-            gMapControl2.RetryLoadTile = 0;
-            gMapControl2.RoutesEnabled = true;
-            gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            gMapControl2.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
-            gMapControl2.ShowTileGridLines = false;
-            gMapControl2.Size = new Size(360, 360);
-            gMapControl2.TabIndex = 13;
-            gMapControl2.Zoom = 0D;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(399, 388);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(100, 23);
-            textBox10.TabIndex = 7;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F);
-            label11.Location = new Point(6, 293);
+            label11.Location = new Point(473, 317);
             label11.Name = "label11";
             label11.Size = new Size(72, 25);
-            label11.TabIndex = 9;
+            label11.TabIndex = 39;
             label11.Text = "İvme X:";
-            // 
-            // button17
-            // 
-            button17.Location = new Point(517, 388);
-            button17.Name = "button17";
-            button17.Size = new Size(75, 54);
-            button17.TabIndex = 6;
-            button17.Text = "GO";
-            button17.UseVisualStyleBackColor = true;
-            button17.Click += button17_Click;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F);
-            label10.Location = new Point(6, 232);
+            label10.Location = new Point(241, 367);
             label10.Name = "label10";
             label10.Size = new Size(101, 25);
-            label10.TabIndex = 8;
+            label10.TabIndex = 38;
             label10.Text = "Jiroskop Z:";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F);
-            label8.Location = new Point(6, 207);
+            label8.Location = new Point(241, 342);
             label8.Name = "label8";
             label8.Size = new Size(101, 25);
-            label8.TabIndex = 7;
+            label8.TabIndex = 37;
             label8.Text = "Jiroskop Y:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F);
-            label7.Location = new Point(6, 182);
+            label7.Location = new Point(241, 317);
             label7.Name = "label7";
             label7.Size = new Size(101, 25);
-            label7.TabIndex = 6;
+            label7.TabIndex = 36;
             label7.Text = "Jiroskop X:";
             // 
             // label32
             // 
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI", 14.25F);
-            label32.Location = new Point(6, 116);
+            label32.Location = new Point(17, 392);
             label32.Name = "label32";
             label32.Size = new Size(129, 25);
-            label32.TabIndex = 5;
+            label32.TabIndex = 35;
             label32.Text = "Roket Boylam:";
             // 
             // label31
             // 
             label31.AutoSize = true;
             label31.Font = new Font("Segoe UI", 14.25F);
-            label31.Location = new Point(6, 91);
+            label31.Location = new Point(17, 367);
             label31.Name = "label31";
             label31.Size = new Size(119, 25);
-            label31.TabIndex = 4;
+            label31.TabIndex = 34;
             label31.Text = "Roket Enlem:";
             // 
             // label30
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Segoe UI", 14.25F);
-            label30.Location = new Point(6, 66);
+            label30.Location = new Point(17, 342);
             label30.Name = "label30";
             label30.Size = new Size(145, 25);
-            label30.TabIndex = 3;
+            label30.TabIndex = 33;
             label30.Text = "Roket GPS irtifa:";
-            label30.Click += label30_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F);
-            label6.Location = new Point(6, 41);
+            label6.Location = new Point(17, 317);
             label6.Name = "label6";
             label6.Size = new Size(106, 25);
-            label6.TabIndex = 0;
+            label6.TabIndex = 32;
             label6.Text = "Roket İrtifa:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Red;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label9.Location = new Point(8, 302);
-            label9.Name = "label9";
-            label9.Size = new Size(143, 21);
-            label9.TabIndex = 13;
-            label9.Text = "NON-CONNECTED";
             // 
             // glControl1
             // 
@@ -663,36 +529,23 @@
             glControl1.APIVersion = new Version(3, 3, 0, 0);
             glControl1.Flags = OpenTK.Windowing.Common.ContextFlags.Default;
             glControl1.IsEventDriven = true;
-            glControl1.Location = new Point(17, 22);
+            glControl1.Location = new Point(6, 20);
             glControl1.Name = "glControl1";
             glControl1.Profile = OpenTK.Windowing.Common.ContextProfile.Core;
-            glControl1.Size = new Size(752, 284);
-            glControl1.TabIndex = 15;
+            glControl1.Size = new Size(277, 284);
+            glControl1.TabIndex = 31;
             glControl1.Text = "glControl1";
-            glControl1.Click += glControl1_Click;
             // 
-            // menuStrip1
+            // label9
             // 
-            menuStrip1.BackColor = Color.FromArgb(52, 152, 219);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, verilerToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1754, 24);
-            menuStrip1.TabIndex = 16;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(102, 20);
-            menuToolStripMenuItem.Text = "Port Operations";
-            menuToolStripMenuItem.Click += menuToolStripMenuItem_Click;
-            // 
-            // verilerToolStripMenuItem
-            // 
-            verilerToolStripMenuItem.Name = "verilerToolStripMenuItem";
-            verilerToolStripMenuItem.Size = new Size(51, 20);
-            verilerToolStripMenuItem.Text = "Veriler";
+            label9.AutoSize = true;
+            label9.BackColor = Color.Red;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label9.Location = new Point(74, 163);
+            label9.Name = "label9";
+            label9.Size = new Size(143, 21);
+            label9.TabIndex = 13;
+            label9.Text = "NON-CONNECTED";
             // 
             // label13
             // 
@@ -711,101 +564,225 @@
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
             tabControl1.Controls.Add(tabPage6);
-            tabControl1.Location = new Point(345, 27);
+            tabControl1.Location = new Point(223, 30);
             tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1400, 673);
+            tabControl1.Size = new Size(1536, 932);
             tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.Snow;
+            tabPage1.BackColor = Color.FromArgb(235, 235, 235);
+            tabPage1.Controls.Add(groupBox8);
+            tabPage1.Controls.Add(pictureBox6);
+            tabPage1.Controls.Add(groupBox13);
+            tabPage1.Controls.Add(pictureBox5);
             tabPage1.Controls.Add(label29);
             tabPage1.Controls.Add(label28);
             tabPage1.Controls.Add(label27);
-            tabPage1.Controls.Add(groupBox8);
-            tabPage1.Controls.Add(groupBox6);
             tabPage1.Controls.Add(groupBox4);
+            tabPage1.Controls.Add(pictureBox4);
             tabPage1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.RightToLeft = RightToLeft.No;
-            tabPage1.Size = new Size(1392, 645);
+            tabPage1.Size = new Size(1528, 904);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Port Ayarları";
             tabPage1.Click += tabPage1_Click;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(6, 47);
-            label29.Name = "label29";
-            label29.Size = new Size(203, 15);
-            label29.TabIndex = 25;
-            label29.Text = "bAĞLANINCA PORTLAR KAPANCAK";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(6, 23);
-            label28.Name = "label28";
-            label28.Size = new Size(172, 15);
-            label28.TabIndex = 24;
-            label28.Text = "Portları yenileme butonu ekle";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(1257, 125);
-            label27.Name = "label27";
-            label27.Size = new Size(76, 15);
-            label27.TabIndex = 23;
-            label27.Text = "19200 silcen";
             // 
             // groupBox8
             // 
-            groupBox8.Controls.Add(label22);
-            groupBox8.Controls.Add(button8);
-            groupBox8.Controls.Add(richTextBox3);
-            groupBox8.Controls.Add(groupBox9);
-            groupBox8.Location = new Point(947, 23);
+            groupBox8.BackColor = Color.White;
+            groupBox8.Controls.Add(groupBox15);
+            groupBox8.Controls.Add(groupBox16);
+            groupBox8.FlatStyle = FlatStyle.Flat;
+            groupBox8.Font = new Font("Tw Cen MT Condensed", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox8.Location = new Point(34, 621);
             groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(304, 636);
-            groupBox8.TabIndex = 22;
+            groupBox8.Size = new Size(1461, 241);
+            groupBox8.TabIndex = 29;
             groupBox8.TabStop = false;
-            groupBox8.Text = "HYİ Portu";
+            groupBox8.Text = "GOREV YUKU IP AYARLARI";
             // 
-            // label22
+            // groupBox15
             // 
-            label22.AutoSize = true;
-            label22.Location = new Point(14, 373);
-            label22.Name = "label22";
-            label22.Size = new Size(74, 15);
-            label22.TabIndex = 20;
-            label22.Text = "Port Verileri";
+            groupBox15.Controls.Add(button19);
+            groupBox15.Controls.Add(richTextBox4);
+            groupBox15.Location = new Point(295, 29);
+            groupBox15.Name = "groupBox15";
+            groupBox15.Size = new Size(1150, 195);
+            groupBox15.TabIndex = 18;
+            groupBox15.TabStop = false;
+            groupBox15.Text = "Gelen Veriler";
+            // 
+            // button19
+            // 
+            button19.Location = new Point(1061, 25);
+            button19.Name = "button19";
+            button19.Size = new Size(75, 42);
+            button19.TabIndex = 19;
+            button19.Text = "Temizle";
+            button19.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox4
+            // 
+            richTextBox4.Location = new Point(11, 25);
+            richTextBox4.Name = "richTextBox4";
+            richTextBox4.Size = new Size(1044, 150);
+            richTextBox4.TabIndex = 18;
+            richTextBox4.Text = "";
+            // 
+            // groupBox16
+            // 
+            groupBox16.Controls.Add(textBox9);
+            groupBox16.Controls.Add(textBox8);
+            groupBox16.Controls.Add(label41);
+            groupBox16.Controls.Add(label42);
+            groupBox16.Controls.Add(label43);
+            groupBox16.Controls.Add(button24);
+            groupBox16.Controls.Add(label61);
+            groupBox16.Location = new Point(14, 29);
+            groupBox16.Name = "groupBox16";
+            groupBox16.Size = new Size(273, 195);
+            groupBox16.TabIndex = 17;
+            groupBox16.TabStop = false;
+            groupBox16.Text = "Port Seçimi";
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(114, 67);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(148, 30);
+            textBox9.TabIndex = 16;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(114, 29);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(148, 30);
+            textBox8.TabIndex = 15;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label41.Location = new Point(8, 72);
+            label41.Name = "label41";
+            label41.Size = new Size(51, 21);
+            label41.TabIndex = 14;
+            label41.Text = "PORT:";
+            label41.Click += label41_Click;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.BackColor = Color.Red;
+            label42.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label42.Location = new Point(71, 155);
+            label42.Name = "label42";
+            label42.Size = new Size(143, 21);
+            label42.TabIndex = 13;
+            label42.Text = "NON-CONNECTED";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label43.Location = new Point(8, 36);
+            label43.Name = "label43";
+            label43.Size = new Size(82, 21);
+            label43.TabIndex = 1;
+            label43.Text = "IP ADRESI:";
+            // 
+            // button24
+            // 
+            button24.Location = new Point(7, 110);
+            button24.Name = "button24";
+            button24.Size = new Size(259, 39);
+            button24.TabIndex = 0;
+            button24.Text = "Baglan";
+            button24.UseVisualStyleBackColor = true;
+            // 
+            // label61
+            // 
+            label61.AutoSize = true;
+            label61.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label61.Location = new Point(8, 154);
+            label61.Name = "label61";
+            label61.Size = new Size(62, 21);
+            label61.TabIndex = 3;
+            label61.Text = "STATUE";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Cursor = Cursors.Cross;
+            pictureBox6.Image = Properties.Resources.finalround;
+            pictureBox6.Location = new Point(17, 608);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(1489, 272);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 30;
+            pictureBox6.TabStop = false;
+            // 
+            // groupBox13
+            // 
+            groupBox13.BackColor = Color.White;
+            groupBox13.Controls.Add(groupBox14);
+            groupBox13.Controls.Add(groupBox9);
+            groupBox13.FlatStyle = FlatStyle.Flat;
+            groupBox13.Font = new Font("Tw Cen MT Condensed", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox13.Location = new Point(34, 326);
+            groupBox13.Name = "groupBox13";
+            groupBox13.Size = new Size(1461, 241);
+            groupBox13.TabIndex = 27;
+            groupBox13.TabStop = false;
+            groupBox13.Text = "HYI PORTU";
+            // 
+            // groupBox14
+            // 
+            groupBox14.Controls.Add(button14);
+            groupBox14.Controls.Add(button8);
+            groupBox14.Controls.Add(richTextBox3);
+            groupBox14.Location = new Point(295, 29);
+            groupBox14.Name = "groupBox14";
+            groupBox14.Size = new Size(1150, 195);
+            groupBox14.TabIndex = 18;
+            groupBox14.TabStop = false;
+            groupBox14.Text = "Gönderilen Veriler";
+            // 
+            // button14
+            // 
+            button14.Location = new Point(1060, 72);
+            button14.Name = "button14";
+            button14.Size = new Size(76, 59);
+            button14.TabIndex = 26;
+            button14.Text = "Paket yolla";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click_1;
             // 
             // button8
             // 
-            button8.Location = new Point(14, 598);
+            button8.Location = new Point(1061, 25);
             button8.Name = "button8";
-            button8.Size = new Size(75, 23);
+            button8.Size = new Size(75, 42);
             button8.TabIndex = 19;
             button8.Text = "Temizle";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // richTextBox3
             // 
-            richTextBox3.Location = new Point(14, 391);
+            richTextBox3.Location = new Point(11, 25);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(273, 201);
+            richTextBox3.Size = new Size(1044, 150);
             richTextBox3.TabIndex = 18;
             richTextBox3.Text = "";
             // 
             // groupBox9
             // 
-            groupBox9.Controls.Add(button14);
             groupBox9.Controls.Add(comboBox5);
             groupBox9.Controls.Add(label23);
             groupBox9.Controls.Add(label24);
@@ -813,22 +790,12 @@
             groupBox9.Controls.Add(button9);
             groupBox9.Controls.Add(comboBox4);
             groupBox9.Controls.Add(label26);
-            groupBox9.Location = new Point(14, 24);
+            groupBox9.Location = new Point(14, 29);
             groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(273, 336);
+            groupBox9.Size = new Size(273, 195);
             groupBox9.TabIndex = 17;
             groupBox9.TabStop = false;
             groupBox9.Text = "Port Seçimi";
-            // 
-            // button14
-            // 
-            button14.Location = new Point(8, 163);
-            button14.Name = "button14";
-            button14.Size = new Size(184, 52);
-            button14.TabIndex = 26;
-            button14.Text = "Paketyolla";
-            button14.UseVisualStyleBackColor = true;
-            button14.Click += button14_Click_1;
             // 
             // comboBox5
             // 
@@ -836,7 +803,7 @@
             comboBox5.Items.AddRange(new object[] { "2400", "4800", "9600", "14400", "19200", "38400" });
             comboBox5.Location = new Point(115, 74);
             comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(147, 23);
+            comboBox5.Size = new Size(147, 32);
             comboBox5.TabIndex = 17;
             // 
             // label23
@@ -854,7 +821,7 @@
             label24.AutoSize = true;
             label24.BackColor = Color.Red;
             label24.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label24.Location = new Point(8, 302);
+            label24.Location = new Point(71, 155);
             label24.Name = "label24";
             label24.Size = new Size(143, 21);
             label24.TabIndex = 13;
@@ -876,7 +843,7 @@
             button9.Name = "button9";
             button9.Size = new Size(259, 39);
             button9.TabIndex = 0;
-            button9.Text = "Bağlan";
+            button9.Text = "Baglan";
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
@@ -885,7 +852,7 @@
             comboBox4.FormattingEnabled = true;
             comboBox4.Location = new Point(115, 33);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(147, 23);
+            comboBox4.Size = new Size(147, 32);
             comboBox4.TabIndex = 2;
             comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             // 
@@ -893,173 +860,94 @@
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label26.Location = new Point(8, 275);
+            label26.Location = new Point(8, 154);
             label26.Name = "label26";
             label26.Size = new Size(62, 21);
             label26.TabIndex = 3;
             label26.Text = "STATUE";
             // 
-            // groupBox6
+            // pictureBox5
             // 
-            groupBox6.Controls.Add(label17);
-            groupBox6.Controls.Add(button6);
-            groupBox6.Controls.Add(richTextBox2);
-            groupBox6.Controls.Add(groupBox7);
-            groupBox6.Location = new Point(589, 23);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(304, 636);
-            groupBox6.TabIndex = 21;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "ROKET PORTU";
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Cursor = Cursors.Cross;
+            pictureBox5.Image = Properties.Resources.finalround;
+            pictureBox5.Location = new Point(17, 313);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(1489, 272);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 28;
+            pictureBox5.TabStop = false;
             // 
-            // label17
+            // label29
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(14, 373);
-            label17.Name = "label17";
-            label17.Size = new Size(74, 15);
-            label17.TabIndex = 20;
-            label17.Text = "Port Verileri";
+            label29.AutoSize = true;
+            label29.Location = new Point(1307, 390);
+            label29.Name = "label29";
+            label29.Size = new Size(203, 15);
+            label29.TabIndex = 25;
+            label29.Text = "bAĞLANINCA PORTLAR KAPANCAK";
             // 
-            // button6
+            // label28
             // 
-            button6.Location = new Point(14, 598);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 19;
-            button6.Text = "Temizle";
-            button6.UseVisualStyleBackColor = true;
+            label28.AutoSize = true;
+            label28.Location = new Point(1307, 366);
+            label28.Name = "label28";
+            label28.Size = new Size(172, 15);
+            label28.TabIndex = 24;
+            label28.Text = "Portları yenileme butonu ekle";
             // 
-            // richTextBox2
+            // label27
             // 
-            richTextBox2.Location = new Point(14, 391);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(273, 201);
-            richTextBox2.TabIndex = 18;
-            richTextBox2.Text = "";
-            // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(comboBox3);
-            groupBox7.Controls.Add(label18);
-            groupBox7.Controls.Add(label19);
-            groupBox7.Controls.Add(label20);
-            groupBox7.Controls.Add(button7);
-            groupBox7.Controls.Add(comboBox2);
-            groupBox7.Controls.Add(label21);
-            groupBox7.Location = new Point(14, 24);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(273, 336);
-            groupBox7.TabIndex = 17;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Port Seçimi";
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "2400", "4800", "9600", "14400", "19200", "38400" });
-            comboBox3.Location = new Point(115, 75);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(147, 23);
-            comboBox3.TabIndex = 16;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label18.Location = new Point(8, 72);
-            label18.Name = "label18";
-            label18.Size = new Size(101, 21);
-            label18.TabIndex = 14;
-            label18.Text = "BAUNDRATE:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.BackColor = Color.Red;
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label19.Location = new Point(8, 302);
-            label19.Name = "label19";
-            label19.Size = new Size(143, 21);
-            label19.TabIndex = 13;
-            label19.Text = "NON-CONNECTED";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label20.Location = new Point(7, 31);
-            label20.Name = "label20";
-            label20.Size = new Size(51, 21);
-            label20.TabIndex = 1;
-            label20.Text = "PORT:";
-            // 
-            // button7
-            // 
-            button7.Location = new Point(7, 110);
-            button7.Name = "button7";
-            button7.Size = new Size(259, 39);
-            button7.TabIndex = 0;
-            button7.Text = "Bağlan";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(115, 33);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(147, 23);
-            comboBox2.TabIndex = 2;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label21.Location = new Point(8, 275);
-            label21.Name = "label21";
-            label21.Size = new Size(62, 21);
-            label21.TabIndex = 3;
-            label21.Text = "STATUE";
+            label27.AutoSize = true;
+            label27.Location = new Point(1307, 346);
+            label27.Name = "label27";
+            label27.Size = new Size(76, 15);
+            label27.TabIndex = 23;
+            label27.Text = "19200 silcen";
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(label16);
-            groupBox4.Controls.Add(button5);
+            groupBox4.BackColor = Color.White;
             groupBox4.Controls.Add(richTextBox1);
+            groupBox4.Controls.Add(groupBox2);
             groupBox4.Controls.Add(groupBox5);
-            groupBox4.Location = new Point(243, 23);
+            groupBox4.FlatStyle = FlatStyle.Flat;
+            groupBox4.Font = new Font("Tw Cen MT Condensed", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox4.Location = new Point(34, 34);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(304, 636);
+            groupBox4.Size = new Size(1461, 242);
             groupBox4.TabIndex = 14;
             groupBox4.TabStop = false;
             groupBox4.Text = "ROKET PORTU";
+            groupBox4.Enter += groupBox4_Enter;
             // 
-            // label16
+            // richTextBox1
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(14, 373);
-            label16.Name = "label16";
-            label16.Size = new Size(74, 15);
-            label16.TabIndex = 20;
-            label16.Text = "Port Verileri";
+            richTextBox1.Location = new Point(306, 57);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(1044, 150);
+            richTextBox1.TabIndex = 18;
+            richTextBox1.Text = "";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(button5);
+            groupBox2.Location = new Point(295, 24);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1150, 200);
+            groupBox2.TabIndex = 18;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Port Verileri";
             // 
             // button5
             // 
-            button5.Location = new Point(14, 598);
+            button5.Location = new Point(1061, 29);
             button5.Name = "button5";
-            button5.Size = new Size(75, 23);
+            button5.Size = new Size(75, 42);
             button5.TabIndex = 19;
             button5.Text = "Temizle";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click_2;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(14, 391);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(273, 201);
-            richTextBox1.TabIndex = 18;
-            richTextBox1.Text = "";
             // 
             // groupBox5
             // 
@@ -1072,7 +960,7 @@
             groupBox5.Controls.Add(comboBox1);
             groupBox5.Location = new Point(14, 24);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(273, 336);
+            groupBox5.Size = new Size(273, 200);
             groupBox5.TabIndex = 17;
             groupBox5.TabStop = false;
             groupBox5.Text = "Port Seçimi";
@@ -1093,9 +981,21 @@
             comboBox1.Items.AddRange(new object[] { "2400", "4800", "9600", "14400", "19200", "38400" });
             comboBox1.Location = new Point(115, 70);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(147, 23);
+            comboBox1.Size = new Size(147, 32);
             comboBox1.TabIndex = 15;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Cursor = Cursors.Cross;
+            pictureBox4.Image = Properties.Resources.finalround;
+            pictureBox4.Location = new Point(20, 21);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(1489, 272);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 26;
+            pictureBox4.TabStop = false;
             // 
             // tabPage3
             // 
@@ -1103,7 +1003,7 @@
             tabPage3.Controls.Add(groupBox3);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1392, 645);
+            tabPage3.Size = new Size(1528, 904);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Veriler";
             tabPage3.UseVisualStyleBackColor = true;
@@ -1121,7 +1021,7 @@
             groupBox11.Controls.Add(label33);
             groupBox11.Location = new Point(738, 25);
             groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(624, 599);
+            groupBox11.Size = new Size(776, 838);
             groupBox11.TabIndex = 13;
             groupBox11.TabStop = false;
             groupBox11.Text = "Faydalı Yük Verileri";
@@ -1299,7 +1199,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1392, 645);
+            tabPage2.Size = new Size(1528, 904);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "GPS ve Lokasyon";
             tabPage2.UseVisualStyleBackColor = true;
@@ -1405,7 +1305,7 @@
             gMapControl3.GrayScaleMode = false;
             gMapControl3.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             gMapControl3.LevelsKeepInMemory = 5;
-            gMapControl3.Location = new Point(708, 6);
+            gMapControl3.Location = new Point(1141, 6);
             gMapControl3.MarkersEnabled = true;
             gMapControl3.MaxZoom = 2;
             gMapControl3.MinZoom = 2;
@@ -1419,7 +1319,7 @@
             gMapControl3.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl3.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl3.ShowTileGridLines = false;
-            gMapControl3.Size = new Size(678, 556);
+            gMapControl3.Size = new Size(245, 564);
             gMapControl3.TabIndex = 46;
             gMapControl3.Zoom = 0D;
             // 
@@ -1440,6 +1340,7 @@
             button3.TabIndex = 44;
             button3.Text = "Değiştir";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // label5
             // 
@@ -1474,6 +1375,7 @@
             button4.TabIndex = 40;
             button4.Text = "Zoom";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // textBox4
             // 
@@ -1541,13 +1443,14 @@
             button20.TabIndex = 34;
             button20.Text = "GO";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
             // 
             // tabPage4
             // 
             tabPage4.Controls.Add(groupBox10);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1392, 645);
+            tabPage4.Size = new Size(1528, 904);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             tabPage4.UseVisualStyleBackColor = true;
@@ -1557,7 +1460,6 @@
             groupBox10.Controls.Add(button18);
             groupBox10.Controls.Add(textBox11);
             groupBox10.Controls.Add(textBox13);
-            groupBox10.Controls.Add(glControl1);
             groupBox10.Location = new Point(3, 8);
             groupBox10.Name = "groupBox10";
             groupBox10.Size = new Size(789, 575);
@@ -1593,7 +1495,7 @@
             tabPage5.Controls.Add(groupBox1);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1392, 645);
+            tabPage5.Size = new Size(1528, 904);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Roket Modeli";
             tabPage5.UseVisualStyleBackColor = true;
@@ -1668,104 +1570,210 @@
             // 
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(1392, 645);
+            tabPage6.Size = new Size(1528, 904);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "BOŞŞŞ";
             tabPage6.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = Properties.Resources.LOGO_VE_İSİM_1;
-            pictureBox1.Location = new Point(31, 14);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 202);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(0, 222);
-            button10.Name = "button10";
-            button10.Size = new Size(343, 77);
-            button10.TabIndex = 20;
-            button10.Text = "NONE";
-            button10.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(41, 128, 185);
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(label22);
+            panel1.Controls.Add(label16);
+            panel1.Controls.Add(button16);
             panel1.Controls.Add(button13);
-            panel1.Controls.Add(button12);
-            panel1.Controls.Add(button11);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button10);
-            panel1.Location = new Point(0, 27);
+            panel1.Location = new Point(0, 45);
             panel1.Name = "panel1";
-            panel1.Size = new Size(343, 683);
+            panel1.Size = new Size(234, 923);
             panel1.TabIndex = 23;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(4, 836);
+            label22.Name = "label22";
+            label22.Size = new Size(195, 31);
+            label22.TabIndex = 24;
+            label22.Text = "Yer Istasyonu Yazılımı";
+            label22.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Tw Cen MT Condensed Extra Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(4, 776);
+            label16.Name = "label16";
+            label16.Size = new Size(223, 96);
+            label16.TabIndex = 23;
+            label16.Text = "MISYA ORTA IRTIFA \r\nROKET TAKIMI\r\n\r\n";
+            label16.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // button16
+            // 
+            button16.FlatAppearance.BorderColor = Color.Silver;
+            button16.FlatAppearance.MouseDownBackColor = Color.Gray;
+            button16.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button16.Location = new Point(-9, 143);
+            button16.Name = "button16";
+            button16.Size = new Size(249, 70);
+            button16.TabIndex = 22;
+            button16.Text = "GPS ve Görüntü";
+            button16.UseVisualStyleBackColor = false;
+            button16.Click += button16_Click_1;
             // 
             // button13
             // 
-            button13.Location = new Point(0, 469);
+            button13.FlatAppearance.BorderColor = Color.Silver;
+            button13.FlatAppearance.MouseDownBackColor = Color.Gray;
+            button13.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button13.Location = new Point(-7, 81);
             button13.Name = "button13";
-            button13.Size = new Size(343, 77);
-            button13.TabIndex = 23;
-            button13.Text = "NONE";
-            button13.UseVisualStyleBackColor = true;
+            button13.Size = new Size(249, 70);
+            button13.TabIndex = 21;
+            button13.Text = "VERİLER";
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
+            // 
+            // button10
+            // 
+            button10.FlatAppearance.BorderColor = Color.Silver;
+            button10.FlatAppearance.MouseDownBackColor = Color.Gray;
+            button10.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button10.FlatStyle = FlatStyle.Flat;
+            button10.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button10.Location = new Point(-6, 12);
+            button10.Name = "button10";
+            button10.Size = new Size(249, 70);
+            button10.TabIndex = 20;
+            button10.Text = "PORT AYARLARI";
+            button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.BackgroundImage = Properties.Resources.logo1;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(7, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(55, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(button12);
+            panel2.Controls.Add(label68);
+            panel2.Controls.Add(label67);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(button11);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Location = new Point(-3, -3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1765, 60);
+            panel2.TabIndex = 24;
             // 
             // button12
             // 
-            button12.Location = new Point(0, 386);
+            button12.BackgroundImage = Properties.Resources.close1437;
+            button12.BackgroundImageLayout = ImageLayout.Stretch;
+            button12.FlatAppearance.BorderSize = 0;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Location = new Point(1714, 16);
             button12.Name = "button12";
-            button12.Size = new Size(343, 77);
-            button12.TabIndex = 22;
-            button12.Text = "NONE";
+            button12.Size = new Size(30, 30);
+            button12.TabIndex = 24;
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click_1;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new Font("Tw Cen MT Condensed Extra Bold", 35F);
+            label68.Location = new Point(970, 4);
+            label68.Name = "label68";
+            label68.Size = new Size(60, 55);
+            label68.TabIndex = 23;
+            label68.Text = ":3";
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Font = new Font("Tw Cen MT Condensed Extra Bold", 35F);
+            label67.Location = new Point(64, 4);
+            label67.Name = "label67";
+            label67.Size = new Size(420, 55);
+            label67.TabIndex = 22;
+            label67.Text = "BAGLANTI BEKLEMEDE";
+            label67.Click += label67_Click;
             // 
             // button11
             // 
-            button11.Location = new Point(0, 303);
+            button11.FlatAppearance.BorderColor = Color.FromArgb(255, 224, 192);
+            button11.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 255, 192);
+            button11.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 0);
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.Location = new Point(-3, 414);
             button11.Name = "button11";
-            button11.Size = new Size(343, 77);
-            button11.TabIndex = 21;
-            button11.Text = "NONE";
-            button11.UseVisualStyleBackColor = true;
+            button11.Size = new Size(361, 69);
+            button11.TabIndex = 20;
+            button11.Text = "button11";
+            button11.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImageLayout = ImageLayout.None;
+            pictureBox3.Image = Properties.Resources.LOGO_VE_İSİM_1;
+            pictureBox3.Location = new Point(-3, 168);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(361, 247);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 19;
+            pictureBox3.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(210, 210, 210);
             ClientSize = new Size(1754, 957);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(tabControl1);
             Controls.Add(label13);
-            Controls.Add(menuStrip1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
-            MainMenuStrip = menuStrip1;
+            Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = " MİSYA Yüksek İrtifa Roket Takımı Yer İstasyonu";
             Load += Form1_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             groupBox8.ResumeLayout(false);
-            groupBox8.PerformLayout();
+            groupBox15.ResumeLayout(false);
+            groupBox16.ResumeLayout(false);
+            groupBox16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            groupBox13.ResumeLayout(false);
+            groupBox14.ResumeLayout(false);
             groupBox9.ResumeLayout(false);
             groupBox9.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
+            groupBox2.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             tabPage3.ResumeLayout(false);
             groupBox11.ResumeLayout(false);
             groupBox11.PerformLayout();
@@ -1781,8 +1789,12 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)videoBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1796,14 +1808,7 @@
         private GroupBox groupBox3;
         private Label label9;
         private Label label2;
-        private Label label10;
-        private Label label11;
-        private Label label6;
-        private OpenTK.WinForms.GLControl glControl1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuToolStripMenuItem;
         private Label label13;
-        private ToolStripMenuItem verilerToolStripMenuItem;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
@@ -1816,10 +1821,7 @@
         private ComboBox comboBox1;
         private RichTextBox richTextBox1;
         private GroupBox groupBox5;
-        private Label label16;
         private Button button5;
-        private GroupBox groupBox8;
-        private Label label22;
         private Button button8;
         private RichTextBox richTextBox3;
         private GroupBox groupBox9;
@@ -1829,51 +1831,16 @@
         private Button button9;
         private ComboBox comboBox4;
         private Label label26;
-        private GroupBox groupBox6;
-        private Label label17;
-        private Button button6;
-        private RichTextBox richTextBox2;
-        private GroupBox groupBox7;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Button button7;
-        private ComboBox comboBox2;
-        private Label label21;
-        private PictureBox pictureBox1;
-        private Button button10;
         private Panel panel1;
-        private Button button13;
-        private Button button12;
-        private Button button11;
         private GroupBox groupBox10;
         private Label label27;
         private ComboBox comboBox5;
-        private ComboBox comboBox3;
         private Label label28;
         private Label label29;
         private Button button14;
         private GroupBox groupBox11;
-        private Label label30;
-        private Label label31;
         private Label label33;
-        private Label label32;
         private Label label34;
-        private Label label8;
-        private Label label7;
-        private Label label36;
-        private Label label35;
-        private Label label38;
-        private Label label37;
-        private TextBox textBox8;
-        private Label label41;
-        private Button button16;
-        private TextBox textBox9;
-        private Label label42;
-        private Label label43;
-        private GMap.NET.WindowsForms.GMapControl gMapControl2;
-        private TextBox textBox10;
-        private Button button17;
         private GroupBox groupBox12;
         private Label label39;
         private TextBox textBox6;
@@ -1891,26 +1858,11 @@
         private Button button18;
         private TextBox textBox11;
         private TextBox textBox13;
-        private Label label56;
-        private Label label55;
-        private Label label54;
-        private Label label53;
-        private Label label52;
-        private Label label51;
-        private Label label50;
-        private Label label49;
-        private Label label48;
-        private Label label47;
-        private Label label46;
-        private Label label45;
         private Label label60;
         private Label label59;
         private Label label58;
         private Label label57;
         private Label label44;
-        private Label label61;
-        private ComboBox comboBox6;
-        private Button button19;
         private ComboBox comboBox7;
         private Button button3;
         private Label label5;
@@ -1935,5 +1887,61 @@
         private TextBox textBox15;
         private Button button23;
         private GMap.NET.WindowsForms.GMapControl gMapControl3;
+        private Button button10;
+        private Panel panel2;
+        private Button button11;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox1;
+        private Label label67;
+        private Label label68;
+        private Button button12;
+        private Button button13;
+        private Label label56;
+        private Label label55;
+        private Label label54;
+        private Label label53;
+        private Label label52;
+        private Label label51;
+        private Label label50;
+        private Label label49;
+        private Label label48;
+        private Label label47;
+        private Label label46;
+        private Label label45;
+        private Label label38;
+        private Label label37;
+        private Label label36;
+        private Label label35;
+        private Label label11;
+        private Label label10;
+        private Label label8;
+        private Label label7;
+        private Label label32;
+        private Label label31;
+        private Label label30;
+        private Label label6;
+        private OpenTK.WinForms.GLControl glControl1;
+        private Panel panel3;
+        private Button button16;
+        private PictureBox pictureBox4;
+        private GroupBox groupBox2;
+        private GroupBox groupBox13;
+        private GroupBox groupBox14;
+        private PictureBox pictureBox5;
+        private Label label16;
+        private Label label22;
+        private GroupBox groupBox8;
+        private GroupBox groupBox15;
+        private Button button19;
+        private RichTextBox richTextBox4;
+        private GroupBox groupBox16;
+        private Label label41;
+        private Label label42;
+        private Label label43;
+        private Button button24;
+        private Label label61;
+        private PictureBox pictureBox6;
+        private TextBox textBox9;
+        private TextBox textBox8;
     }
 }

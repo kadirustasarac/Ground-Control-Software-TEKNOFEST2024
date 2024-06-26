@@ -10,8 +10,14 @@ using GMap.NET;
 using System.Xml.Linq;
 using OpenTK.WinForms;
 using GMap.NET.MapProviders;
+using System.Runtime.InteropServices;
+using LiveCharts;
+using LiveCharts.WinForms;
+using LiveCharts.Wpf;
+using CartesianChart = LiveCharts.WinForms.CartesianChart;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-
+//1528; 904 UNUTMAAA!
 
 namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 {
@@ -43,14 +49,26 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         private float angle = 0.0f;
         private ObjLoader objLoader;
 
+        //Rounded yap
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+      (
+          int nLeftRect,     // x-coordinate of upper-left corner
+          int nTopRect,      // y-coordinate of upper-left corner
+          int nRightRect,    // x-coordinate of lower-right corner
+          int nBottomRect,   // y-coordinate of lower-right corner
+          int nWidthEllipse, // height of ellipse
+          int nHeightEllipse // width of ellipse
+      );
+
         public Form1()
         {
             InitializeComponent();
             richTextBox1.ReadOnly = true;
-            richTextBox2.ReadOnly = true;
             richTextBox3.ReadOnly = true;
             //-------------------------------------------------------------------------------------------------
-            gmap = gMapControl2;
+            gmap = gMapControl1;
             gmap.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
             //gmap.Dock = DockStyle.Fill;
             gmap.CanDragMap = false;
@@ -72,7 +90,13 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
                 MessageBox.Show("COM portu bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error); //Eğer port bulamazsan hata attır.
             }
 
+            //Round yap
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -107,6 +131,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
                         label9.Text = "BAĞLANDI";
                         label9.BackColor = Color.Green;
                         button1.Text = "Bağlantıyı Kes";
+                        label67.Text = "FIRLATMAYA HAZIR";
 
                     }
                 }
@@ -274,34 +299,58 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (comboBox4.SelectedItem != null)
+            if (!hakemPortDurum)
             {
-                // Seçilen COM port adını alın
-                string selectedPort = comboBox4.SelectedItem.ToString();
-                int baundRate = Convert.ToInt32(comboBox5.Text);
-
-                // SerialPort oluşturun ve bağlantıyı açın
-                hakemPort = new SerialPort(selectedPort, baundRate); // COM port adı ve baud rate (9600) girilir
-
-                try
+                if (comboBox4.SelectedItem != null && comboBox5.SelectedItem != null)
                 {
-                    hakemPort.Open();
+                    // Seçilen COM port adını alın
+                    string selectedPort = comboBox4.SelectedItem.ToString();
+                    int baundRate = Convert.ToInt32(comboBox5.Text);
+
+                    // SerialPort oluşturun ve bağlantıyı açın
+                    hakemPort = new SerialPort(selectedPort, baundRate); // COM port adı ve baud rate (9600) girilir
+
+                    try
+                    {
+                        hakemPort.Open();
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Serial Port açılırken hata oluştu ! Hata: \n " + error.ToString());
+                    }
+
+                    if (hakemPort.IsOpen)
+                    {
+                        // Bağlantı durumunu güncelleyin
+                        hakemPortDurum = true;
+                        label24.Text = "BAĞLANDI";
+                        label24.BackColor = Color.Green;
+                        button9.Text = "Bağlantıyı Kes";
+
+                    }
                 }
-                catch (Exception error)
+                else
                 {
-                    MessageBox.Show("Serial Port açılırken hata oluştu ! Hata: \n " + error.ToString());
+                    MessageBox.Show("Lütfen bir COM port seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-
-                // Veri alımı için bir event handler ekle. Her data geldiğinde tetiklenecek
-                //roketPort.DataReceived += RoketSerial_Handler;
-
-                // Bağlantı durumunu güncelleyin
-                label19.Text = "Bağlı";
             }
             else
             {
-                MessageBox.Show("Lütfen bir COM port seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                try
+                {
+                    hakemPort.Close();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("HATA !" + error);
+                }
+                if (!hakemPort.IsOpen)
+                {
+                    label24.Text = "BAĞLANTI KESİLDİ";
+                    label24.BackColor = Color.Red;
+                    button9.Text = "Bağlan";
+                    hakemPortDurum = false;
+                }
             }
         }
 
@@ -498,7 +547,10 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         void PaketiYolla()
         {
             hakemPort.Write(olusturalacak_paket, 0, olusturalacak_paket.Length);
+            richTextBox3.AppendText("YOLLANAN VERİ: \n");
             richTextBox3.AppendText(BitConverter.ToString(olusturalacak_paket));
+            richTextBox3.AppendText("\n \n");
+            richTextBox3.ScrollToCaret();
         }
 
         private void button14_Click_1(object sender, EventArgs e)
@@ -524,20 +576,12 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button17_Click(object sender, EventArgs e)
         {
-            gmap.Position = new PointLatLng(Convert.ToDouble(textBox10.Text), Convert.ToDouble(textBox9.Text));
-            gmap.Zoom = 5;
-            gmap.Update();
-            gmap.Refresh();
+
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            int zoomLevel = Convert.ToInt32(textBox8.Text);
-            gmap.MinZoom = zoomLevel;
-            gmap.MaxZoom = zoomLevel;
-            gmap.Zoom = zoomLevel;
-            gmap.Update();
-            gmap.Refresh();
+
         }
 
         private void label43_Click(object sender, EventArgs e)
@@ -547,7 +591,42 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
         private void button19_Click(object sender, EventArgs e)
         {
-            switch (comboBox6.SelectedItem.ToString()) 
+
+        }
+
+        private void label67_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            gmap.Position = new PointLatLng(Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox4.Text));
+            gmap.Zoom = 5;
+            gmap.Update();
+            gmap.Refresh();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            int zoomLevel = Convert.ToInt32(textBox3.Text);
+            gmap.MinZoom = zoomLevel;
+            gmap.MaxZoom = zoomLevel;
+            gmap.Zoom = zoomLevel;
+            gmap.Update();
+            gmap.Refresh();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            switch (comboBox7.SelectedItem.ToString())
             {
                 case "Uydu":
                     gmap.MapProvider = GMapProviders.GoogleSatelliteMap;
@@ -565,6 +644,59 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
                     MessageBox.Show("allani si");
                     break;
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            richTextBox3.Clear();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            comboBoxCOM.Items.Clear();
+            comboBox4.Items.Clear();
+            string[] ports = SerialPort.GetPortNames();  //Port isimlerini çek.
+            comboBoxCOM.Items.AddRange(ports);  //Port isimlerini ekle.
+            comboBox4.Items.AddRange(ports);
+
+            tabControl1.SelectedIndex = 0;
+
+            button10.BackColor = Color.LightGray;
+            button13.BackColor = Color.WhiteSmoke;
+            button16.BackColor = Color.WhiteSmoke;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+            button13.BackColor = Color.LightGray;
+            button10.BackColor = Color.WhiteSmoke;
+            button16.BackColor = Color.WhiteSmoke;
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+
+            button16.BackColor = Color.LightGray;
+            button13.BackColor = Color.WhiteSmoke;
+            button10.BackColor = Color.WhiteSmoke;
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelStatue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label41_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
