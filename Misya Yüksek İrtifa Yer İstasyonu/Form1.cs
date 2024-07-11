@@ -16,14 +16,21 @@ using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using CartesianChart = LiveCharts.WinForms.CartesianChart;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms;
+using Microsoft.Web.WebView2.Core;
+using Microsoft.Web.WebView2.WinForms;
+using WebSocketSharp;
+using WebSocketSharp.Server;
 
-//1528; 904 UNUTMAAA!
+//223; 30 UNUTMAAA!
 
 namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 {
 
     public partial class Form1 : Form
     {
+        int zoomMiktar = 18;
         //Seri port aktarım değişkenleri
         private SerialPort roketPort;
         private SerialPort gorevPort;
@@ -32,6 +39,10 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         private bool roketPortDurum;
         private bool gorevPortDurum;
         private bool hakemPortDurum;
+
+        float deneme = 10;
+
+        string receivedData = "";
 
 
 
@@ -44,10 +55,51 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         byte[] olusturalacak_paket = new byte[78];
 
         GMap.NET.WindowsForms.GMapControl gmap;
+        GMap.NET.WindowsForms.GMapControl gmap2;
+        private GMapOverlay routesOverlay = new GMapOverlay("routes");
+        private List<PointLatLng> points = new List<PointLatLng>();
 
-        private GLControl glControl;
-        private float angle = 0.0f;
-        private ObjLoader objLoader;
+        //Modelleme
+        private WebSocketServer _wss;
+
+        //veriler
+        float
+            RoketIrtifa = 10.2F,
+            RoketGPSIrtifa = 10.2F,
+            RoketEnlem = 10.2F,
+            RoketBoylam = 10.2F,
+            GorevYukuGPSIrtifa = 10.2F,
+            GorevYukuEnlem = 10.2F,
+            GorevYukuBoylam = 10.2F,
+            JiroskopX = 10.2F,
+            JiroskopY = 10.2F,
+            JiroskopZ = 10.2F,
+            IvmeX = 10.2F,
+            IvmeY = 10.2F,
+            IvmeZ = 10.2F,
+            Aci = 10.2F;
+
+        byte durum = 1;
+
+        private void StartWebSocketServer()
+        {
+            _wss = new WebSocketServer("ws://127.0.0.1:8080");
+            _wss.AddWebSocketService<ChatBehavior>("/chat");
+            _wss.Start();
+            Console.WriteLine("WebSocket Server started at ws://127.0.0.1:8080");
+        }
+        public class ChatBehavior : WebSocketBehavior
+        {
+            protected override void OnMessage(MessageEventArgs e)
+            {
+                Console.WriteLine($"Received: {e.Data}");
+                Send($"Echo: {e.Data}");
+            }
+        }
+
+
+
+
 
         //Rounded yap
 
@@ -65,18 +117,34 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         public Form1()
         {
             InitializeComponent();
+            StartWebSocketServer();
+
             richTextBox1.ReadOnly = true;
             richTextBox3.ReadOnly = true;
             //-------------------------------------------------------------------------------------------------
-            gmap = gMapControl1;
+            gmap = gMapControl2;
             gmap.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
             //gmap.Dock = DockStyle.Fill;
             gmap.CanDragMap = false;
             gmap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
             gmap.ShowCenter = false;
-            gmap.MinZoom = 5;
-            gmap.MaxZoom = 5;
+            gmap.MinZoom = zoomMiktar;
+            gmap.MaxZoom = zoomMiktar;
+
+
+
+
+            //gmap2 = gMapControl4;
+            //gmap2.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
+            ////gmap.Dock = DockStyle.Fill;
+            //gmap2.CanDragMap = false;
+            //gmap2.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+            //gmap2.ShowCenter = false;
+            //gmap2.MinZoom = 5;
+            //gmap2.MaxZoom = 5;
+
+
 
 
 
@@ -114,6 +182,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
                     try
                     {
                         roketPort.Open();
+                        timer2.Start();
                     }
                     catch (Exception error)
                     {
@@ -122,7 +191,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
 
 
                     // Veri alımı için bir event handler ekle. Her data geldiğinde tetiklenecek
-                    roketPort.DataReceived += RoketSerial_Handler;
+                    //roketPort.DataReceived += RoketSerial_Handler;
 
                     if (roketPort.IsOpen)
                     {
@@ -161,17 +230,18 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         }
         private void RoketSerial_Handler(object sender, SerialDataReceivedEventArgs e)
         {
+
             // Veri alındığında burası çalışır
             // Gelen veriyi okuyun
-            string receivedData = roketPort.ReadLine();
+            //receivedData = roketPort.ReadLine();
 
             // Veriyi işleyin, ekrana yazdırabilir veya başka bir işlem yapabilirsiniz
             // Örneğin, bu örnekte gelen veriyi direkt olarak ekrana yazdırıyoruz
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                richTextBox1.AppendText(receivedData); //UI threading
-                richTextBox1.ScrollToCaret();
-            }));
+          //this.Invoke(new MethodInvoker(delegate ()
+          //{
+          //    richTextBox1.AppendText(receivedData); //UI threading
+          //    richTextBox1.ScrollToCaret();
+          //}));
 
         }
 
@@ -640,9 +710,6 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
                 case "GMAP":
                     gmap.MapProvider = GMapProviders.GoogleMap;
                     break;
-                default:
-                    MessageBox.Show("allani si");
-                    break;
             }
         }
 
@@ -664,6 +731,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
             button10.BackColor = Color.LightGray;
             button13.BackColor = Color.WhiteSmoke;
             button16.BackColor = Color.WhiteSmoke;
+            button18.BackColor = Color.WhiteSmoke;
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -673,6 +741,7 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
             button13.BackColor = Color.LightGray;
             button10.BackColor = Color.WhiteSmoke;
             button16.BackColor = Color.WhiteSmoke;
+            button18.BackColor = Color.WhiteSmoke;
         }
 
         private void button16_Click_1(object sender, EventArgs e)
@@ -680,6 +749,16 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
             tabControl1.SelectedIndex = 2;
 
             button16.BackColor = Color.LightGray;
+            button13.BackColor = Color.WhiteSmoke;
+            button10.BackColor = Color.WhiteSmoke;
+            button18.BackColor = Color.WhiteSmoke;
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+
+            button18.BackColor = Color.LightGray;
+            button16.BackColor = Color.WhiteSmoke;
             button13.BackColor = Color.WhiteSmoke;
             button10.BackColor = Color.WhiteSmoke;
         }
@@ -697,6 +776,332 @@ namespace Misya_Yüksek_İrtifa_Yer_İstasyonu
         private void label41_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PointLatLng startPoint = new PointLatLng(40.7128, -74.0060); // New York
+            points.Add(startPoint);
+
+            // Başlangıç noktasına marker ekleme
+            GMapMarker startMarker = new GMarkerGoogle(startPoint, GMarkerGoogleType.green_dot);
+            routesOverlay.Markers.Add(startMarker);
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            double lat = 40.0 + (random.NextDouble() - 0.5) * 10.0; // 35.0 ile 45.0 arasında bir enlem
+            double lng = -75.0 + (random.NextDouble() - 0.5) * 10.0; // -80.0 ile -70.0 arasında bir boylam
+            PointLatLng newPoint = new PointLatLng(lat, lng);
+            points.Add(newPoint);
+
+            // Yeni noktaya marker ekleme
+            GMapMarker newMarker = new GMarkerGoogle(newPoint, GMarkerGoogleType.red_dot);
+            routesOverlay.Markers.Add(newMarker);
+
+            // Güzergah oluşturma
+            GMapRoute route = new GMapRoute(points, "My Route")
+            {
+                Stroke = new Pen(Color.Red, 3) // Güzergah çizgisinin rengi ve kalınlığı
+            };
+
+            // Mevcut güzergahları kaldırma ve yeni güzergahı ekleme
+            routesOverlay.Routes.Clear();
+            routesOverlay.Routes.Add(route);
+            gMapControl1.Refresh();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void button17_Click_1(object sender, EventArgs e)
+        {
+            InitializeAsync();
+        }
+
+        private async void InitializeAsync()
+        {
+            await webView21.EnsureCoreWebView2Async(null);
+            webView21.CoreWebView2.Navigate("http://localhost:8000");
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            _wss.WebSocketServices["/chat"].Sessions.Broadcast(textBox10.Text + "*" + textBox11.Text + "*" + textBox13.Text);
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            UpdateDatas();
+
+        }
+
+        private void UpdateDatas()
+        {
+           
+            try
+            {
+                receivedData = roketPort.ReadLine();
+                string[] datas = receivedData.Split("/");
+
+                string RoketEnlemString = datas[2].Replace(".", ",");
+                string RoketBoylamString = datas[3].Replace(".", ",");
+                RoketIrtifa = float.Parse(datas[0]);
+                RoketGPSIrtifa = float.Parse(datas[1]);
+                RoketEnlem = float.Parse(datas[2]);
+                RoketBoylam = float.Parse(datas[3]);
+                GorevYukuGPSIrtifa = float.Parse(datas[4]);
+                GorevYukuEnlem = float.Parse(datas[5]);
+                GorevYukuBoylam = float.Parse(datas[6]);
+                JiroskopX = float.Parse(datas[7]);
+                JiroskopY = float.Parse(datas[8]);
+                JiroskopZ = float.Parse(datas[9]);
+                IvmeX = float.Parse(datas[10]);
+                IvmeY = float.Parse(datas[11]);
+                IvmeZ = float.Parse(datas[12]);
+                Aci = float.Parse(datas[13]);
+                durum = byte.Parse(datas[14]);
+
+                this.Invoke((MethodInvoker)delegate
+                {
+                    gmap.Position = new PointLatLng(Convert.ToDouble(RoketEnlemString), Convert.ToDouble(RoketBoylamString));
+                    gmap.Zoom = zoomMiktar;
+                    gmap.Update();
+                    gmap.Refresh();
+                });
+
+                //gmap2.Position = new PointLatLng(Convert.ToDouble(GorevYukuEnlem), Convert.ToDouble(GorevYukuBoylam));
+                //gmap2.Zoom = 1;
+                //gmap2.Update();
+                //gmap2.Refresh();
+
+                if (label45.InvokeRequired)
+                {
+                    label45.Invoke((MethodInvoker)delegate
+                    {
+                        label45.Text = datas[0];
+                    });
+                }
+                else
+                {
+                    label45.Text = datas[0];
+                }
+
+                if (label46.InvokeRequired)
+                {
+                    label46.Invoke((MethodInvoker)delegate
+                    {
+                        label46.Text = datas[1];
+                    });
+                }
+                else
+                {
+                    label46.Text = datas[1];
+                }
+
+                if (label47.InvokeRequired)
+                {
+                    label47.Invoke((MethodInvoker)delegate
+                    {
+                        label47.Text = datas[2];
+                    });
+                }
+                else
+                {
+                    label47.Text = datas[2];
+                }
+
+                if (label48.InvokeRequired)
+                {
+                    label48.Invoke((MethodInvoker)delegate
+                    {
+                        label48.Text = datas[3];
+                    });
+                }
+                else
+                {
+                    label48.Text = datas[3];
+                }
+
+                if (label49.InvokeRequired)
+                {
+                    label49.Invoke((MethodInvoker)delegate
+                    {
+                        label49.Text = datas[7];
+                    });
+                }
+                else
+                {
+                    label49.Text = datas[7];
+                }
+
+                if (label50.InvokeRequired)
+                {
+                    label50.Invoke((MethodInvoker)delegate
+                    {
+                        label50.Text = datas[8];
+                    });
+                }
+                else
+                {
+                    label50.Text = datas[8];
+                }
+
+                if (label51.InvokeRequired)
+                {
+                    label51.Invoke((MethodInvoker)delegate
+                    {
+                        label51.Text = datas[9];
+                    });
+                }
+                else
+                {
+                    label51.Text = datas[9];
+                }
+
+                if (label52.InvokeRequired)
+                {
+                    label52.Invoke((MethodInvoker)delegate
+                    {
+                        label52.Text = datas[10];
+                    });
+                }
+                else
+                {
+                    label52.Text = datas[10];
+                }
+
+                if (label53.InvokeRequired)
+                {
+                    label53.Invoke((MethodInvoker)delegate
+                    {
+                        label53.Text = datas[11];
+                    });
+                }
+                else
+                {
+                    label53.Text = datas[11];
+                }
+
+                if (label54.InvokeRequired)
+                {
+                    label54.Invoke((MethodInvoker)delegate
+                    {
+                        label54.Text = datas[12];
+                    });
+                }
+                else
+                {
+                    label54.Text = datas[12];
+                }
+
+                if (label55.InvokeRequired)
+                {
+                    label55.Invoke((MethodInvoker)delegate
+                    {
+                        label55.Text = datas[13];
+                    });
+                }
+                else
+                {
+                    label55.Text = datas[13];
+                }
+
+                if (label56.InvokeRequired)
+                {
+                    label56.Invoke((MethodInvoker)delegate
+                    {
+                        label56.Text = datas[14];
+                    });
+                }
+                else
+                {
+                    label56.Text = datas[14];
+                }
+
+                if (label57.InvokeRequired)
+                {
+                    label57.Invoke((MethodInvoker)delegate
+                    {
+                        label57.Text = datas[4];
+                    });
+                }
+                else
+                {
+                    label57.Text = datas[4];
+                }
+
+                if (label58.InvokeRequired)
+                {
+                    label58.Invoke((MethodInvoker)delegate
+                    {
+                        label58.Text = datas[5];
+                    });
+                }
+                else
+                {
+                    label58.Text = datas[5];
+                }
+
+                if (label59.InvokeRequired)
+                {
+                    label59.Invoke((MethodInvoker)delegate
+                    {
+                        label59.Text = datas[6];
+                    });
+                }
+                else
+                {
+                    label59.Text = datas[6];
+                }
+
+                //if (label60.InvokeRequired)
+                //{
+                //    label60.Invoke((MethodInvoker)delegate {
+                //        label60.Text = datas[18];
+                //    });
+                //}
+                //else
+                //{
+                //    label60.Text = datas[18];
+                //}
+
+
+
+            }
+            catch (Exception err)
+            {
+               MessageBox.Show(err.ToString());
+
+
+
+            }
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+        }
+
+        private void timer2_Tick_1(object sender, EventArgs e)
+        {
+            UpdateDatas();   
         }
     }
 }

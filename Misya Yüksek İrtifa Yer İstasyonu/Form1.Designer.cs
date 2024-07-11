@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             label1 = new Label();
             comboBoxCOM = new ComboBox();
             labelStatue = new Label();
             groupBox3 = new GroupBox();
-            panel3 = new Panel();
+            pictureBox7 = new PictureBox();
+            gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
             label56 = new Label();
             label55 = new Label();
             label54 = new Label();
@@ -58,7 +60,6 @@
             label31 = new Label();
             label30 = new Label();
             label6 = new Label();
-            glControl1 = new OpenTK.WinForms.GLControl();
             label9 = new Label();
             label13 = new Label();
             tabControl1 = new TabControl();
@@ -102,23 +103,9 @@
             comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
             tabPage3 = new TabPage();
-            groupBox11 = new GroupBox();
-            label60 = new Label();
-            label59 = new Label();
-            label58 = new Label();
-            label57 = new Label();
-            label44 = new Label();
-            groupBox12 = new GroupBox();
-            label39 = new Label();
-            textBox6 = new TextBox();
-            label40 = new Label();
-            textBox7 = new TextBox();
-            button15 = new Button();
-            pictureBox2 = new PictureBox();
-            label2 = new Label();
-            label34 = new Label();
-            label33 = new Label();
             tabPage2 = new TabPage();
+            button7 = new Button();
+            button6 = new Button();
             comboBox8 = new ComboBox();
             button21 = new Button();
             label63 = new Label();
@@ -144,10 +131,13 @@
             textBox5 = new TextBox();
             button20 = new Button();
             tabPage4 = new TabPage();
-            groupBox10 = new GroupBox();
-            button18 = new Button();
-            textBox11 = new TextBox();
             textBox13 = new TextBox();
+            textBox11 = new TextBox();
+            textBox10 = new TextBox();
+            button26 = new Button();
+            button25 = new Button();
+            button17 = new Button();
+            webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             tabPage5 = new TabPage();
             groupBox1 = new GroupBox();
             label4 = new Label();
@@ -157,7 +147,26 @@
             button2 = new Button();
             videoBox = new PictureBox();
             tabPage6 = new TabPage();
+            tabPage7 = new TabPage();
+            groupBox11 = new GroupBox();
+            button27 = new Button();
+            label60 = new Label();
+            label59 = new Label();
+            label58 = new Label();
+            label57 = new Label();
+            label44 = new Label();
+            groupBox12 = new GroupBox();
+            label39 = new Label();
+            textBox6 = new TextBox();
+            label40 = new Label();
+            textBox7 = new TextBox();
+            button15 = new Button();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
+            label34 = new Label();
+            label33 = new Label();
             panel1 = new Panel();
+            button18 = new Button();
             label22 = new Label();
             label16 = new Label();
             button16 = new Button();
@@ -170,7 +179,10 @@
             label67 = new Label();
             button11 = new Button();
             pictureBox3 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox8.SuspendLayout();
@@ -186,15 +198,16 @@
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             tabPage3.SuspendLayout();
-            groupBox11.SuspendLayout();
-            groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
-            groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)webView21).BeginInit();
             tabPage5.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)videoBox).BeginInit();
+            tabPage7.SuspendLayout();
+            groupBox11.SuspendLayout();
+            groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -243,7 +256,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(panel3);
+            groupBox3.Controls.Add(pictureBox7);
+            groupBox3.Controls.Add(gMapControl2);
             groupBox3.Controls.Add(label56);
             groupBox3.Controls.Add(label55);
             groupBox3.Controls.Add(label54);
@@ -268,26 +282,54 @@
             groupBox3.Controls.Add(label31);
             groupBox3.Controls.Add(label30);
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(glControl1);
             groupBox3.Location = new Point(19, 25);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(693, 838);
+            groupBox3.Size = new Size(1461, 838);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Roket Verileri";
             // 
-            // panel3
+            // pictureBox7
             // 
-            panel3.Location = new Point(17, 456);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(655, 362);
-            panel3.TabIndex = 56;
+            pictureBox7.Image = Properties.Resources.logo1;
+            pictureBox7.Location = new Point(701, 352);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(32, 32);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 58;
+            pictureBox7.TabStop = false;
+            // 
+            // gMapControl2
+            // 
+            gMapControl2.Bearing = 0F;
+            gMapControl2.CanDragMap = true;
+            gMapControl2.EmptyTileColor = Color.Navy;
+            gMapControl2.GrayScaleMode = false;
+            gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            gMapControl2.LevelsKeepInMemory = 5;
+            gMapControl2.Location = new Point(17, 22);
+            gMapControl2.MarkersEnabled = true;
+            gMapControl2.MaxZoom = 2;
+            gMapControl2.MinZoom = 2;
+            gMapControl2.MouseWheelZoomEnabled = true;
+            gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            gMapControl2.Name = "gMapControl2";
+            gMapControl2.NegativeMode = false;
+            gMapControl2.PolygonsEnabled = true;
+            gMapControl2.RetryLoadTile = 0;
+            gMapControl2.RoutesEnabled = true;
+            gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            gMapControl2.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
+            gMapControl2.ShowTileGridLines = false;
+            gMapControl2.Size = new Size(1394, 683);
+            gMapControl2.TabIndex = 57;
+            gMapControl2.Zoom = 0D;
             // 
             // label56
             // 
             label56.AutoSize = true;
             label56.Font = new Font("Segoe UI", 14.25F);
-            label56.Location = new Point(628, 392);
+            label56.Location = new Point(760, 803);
             label56.Name = "label56";
             label56.Size = new Size(44, 25);
             label56.TabIndex = 55;
@@ -297,7 +339,7 @@
             // 
             label55.AutoSize = true;
             label55.Font = new Font("Segoe UI", 14.25F);
-            label55.Location = new Point(396, 392);
+            label55.Location = new Point(470, 803);
             label55.Name = "label55";
             label55.Size = new Size(44, 25);
             label55.TabIndex = 54;
@@ -307,7 +349,7 @@
             // 
             label54.AutoSize = true;
             label54.Font = new Font("Segoe UI", 14.25F);
-            label54.Location = new Point(628, 367);
+            label54.Location = new Point(760, 778);
             label54.Name = "label54";
             label54.Size = new Size(44, 25);
             label54.TabIndex = 53;
@@ -317,7 +359,7 @@
             // 
             label53.AutoSize = true;
             label53.Font = new Font("Segoe UI", 14.25F);
-            label53.Location = new Point(628, 342);
+            label53.Location = new Point(760, 753);
             label53.Name = "label53";
             label53.Size = new Size(44, 25);
             label53.TabIndex = 52;
@@ -327,7 +369,7 @@
             // 
             label52.AutoSize = true;
             label52.Font = new Font("Segoe UI", 14.25F);
-            label52.Location = new Point(628, 317);
+            label52.Location = new Point(760, 728);
             label52.Name = "label52";
             label52.Size = new Size(44, 25);
             label52.TabIndex = 51;
@@ -337,7 +379,7 @@
             // 
             label51.AutoSize = true;
             label51.Font = new Font("Segoe UI", 14.25F);
-            label51.Location = new Point(396, 367);
+            label51.Location = new Point(470, 778);
             label51.Name = "label51";
             label51.Size = new Size(44, 25);
             label51.TabIndex = 50;
@@ -347,7 +389,7 @@
             // 
             label50.AutoSize = true;
             label50.Font = new Font("Segoe UI", 14.25F);
-            label50.Location = new Point(396, 342);
+            label50.Location = new Point(470, 753);
             label50.Name = "label50";
             label50.Size = new Size(44, 25);
             label50.TabIndex = 49;
@@ -357,7 +399,7 @@
             // 
             label49.AutoSize = true;
             label49.Font = new Font("Segoe UI", 14.25F);
-            label49.Location = new Point(396, 317);
+            label49.Location = new Point(470, 728);
             label49.Name = "label49";
             label49.Size = new Size(44, 25);
             label49.TabIndex = 48;
@@ -367,7 +409,7 @@
             // 
             label48.AutoSize = true;
             label48.Font = new Font("Segoe UI", 14.25F);
-            label48.Location = new Point(172, 392);
+            label48.Location = new Point(172, 803);
             label48.Name = "label48";
             label48.Size = new Size(44, 25);
             label48.TabIndex = 47;
@@ -377,7 +419,7 @@
             // 
             label47.AutoSize = true;
             label47.Font = new Font("Segoe UI", 14.25F);
-            label47.Location = new Point(172, 367);
+            label47.Location = new Point(172, 778);
             label47.Name = "label47";
             label47.Size = new Size(44, 25);
             label47.TabIndex = 46;
@@ -387,7 +429,7 @@
             // 
             label46.AutoSize = true;
             label46.Font = new Font("Segoe UI", 14.25F);
-            label46.Location = new Point(172, 342);
+            label46.Location = new Point(172, 753);
             label46.Name = "label46";
             label46.Size = new Size(44, 25);
             label46.TabIndex = 45;
@@ -397,7 +439,7 @@
             // 
             label45.AutoSize = true;
             label45.Font = new Font("Segoe UI", 14.25F);
-            label45.Location = new Point(172, 317);
+            label45.Location = new Point(172, 728);
             label45.Name = "label45";
             label45.Size = new Size(44, 25);
             label45.TabIndex = 44;
@@ -407,7 +449,7 @@
             // 
             label38.AutoSize = true;
             label38.Font = new Font("Segoe UI", 14.25F);
-            label38.Location = new Point(473, 392);
+            label38.Location = new Point(605, 803);
             label38.Name = "label38";
             label38.Size = new Size(74, 25);
             label38.TabIndex = 43;
@@ -417,7 +459,7 @@
             // 
             label37.AutoSize = true;
             label37.Font = new Font("Segoe UI", 14.25F);
-            label37.Location = new Point(241, 392);
+            label37.Location = new Point(315, 803);
             label37.Name = "label37";
             label37.Size = new Size(42, 25);
             label37.TabIndex = 42;
@@ -427,7 +469,7 @@
             // 
             label36.AutoSize = true;
             label36.Font = new Font("Segoe UI", 14.25F);
-            label36.Location = new Point(473, 367);
+            label36.Location = new Point(605, 778);
             label36.Name = "label36";
             label36.Size = new Size(72, 25);
             label36.TabIndex = 41;
@@ -437,7 +479,7 @@
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 14.25F);
-            label35.Location = new Point(473, 342);
+            label35.Location = new Point(605, 753);
             label35.Name = "label35";
             label35.Size = new Size(72, 25);
             label35.TabIndex = 40;
@@ -447,7 +489,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F);
-            label11.Location = new Point(473, 317);
+            label11.Location = new Point(605, 728);
             label11.Name = "label11";
             label11.Size = new Size(72, 25);
             label11.TabIndex = 39;
@@ -457,7 +499,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F);
-            label10.Location = new Point(241, 367);
+            label10.Location = new Point(315, 778);
             label10.Name = "label10";
             label10.Size = new Size(101, 25);
             label10.TabIndex = 38;
@@ -467,7 +509,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F);
-            label8.Location = new Point(241, 342);
+            label8.Location = new Point(315, 753);
             label8.Name = "label8";
             label8.Size = new Size(101, 25);
             label8.TabIndex = 37;
@@ -477,7 +519,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F);
-            label7.Location = new Point(241, 317);
+            label7.Location = new Point(315, 728);
             label7.Name = "label7";
             label7.Size = new Size(101, 25);
             label7.TabIndex = 36;
@@ -487,7 +529,7 @@
             // 
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI", 14.25F);
-            label32.Location = new Point(17, 392);
+            label32.Location = new Point(17, 803);
             label32.Name = "label32";
             label32.Size = new Size(129, 25);
             label32.TabIndex = 35;
@@ -497,7 +539,7 @@
             // 
             label31.AutoSize = true;
             label31.Font = new Font("Segoe UI", 14.25F);
-            label31.Location = new Point(17, 367);
+            label31.Location = new Point(17, 778);
             label31.Name = "label31";
             label31.Size = new Size(119, 25);
             label31.TabIndex = 34;
@@ -507,7 +549,7 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Segoe UI", 14.25F);
-            label30.Location = new Point(17, 342);
+            label30.Location = new Point(17, 753);
             label30.Name = "label30";
             label30.Size = new Size(145, 25);
             label30.TabIndex = 33;
@@ -517,24 +559,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F);
-            label6.Location = new Point(17, 317);
+            label6.Location = new Point(17, 728);
             label6.Name = "label6";
             label6.Size = new Size(106, 25);
             label6.TabIndex = 32;
             label6.Text = "Roket İrtifa:";
-            // 
-            // glControl1
-            // 
-            glControl1.API = OpenTK.Windowing.Common.ContextAPI.OpenGL;
-            glControl1.APIVersion = new Version(3, 3, 0, 0);
-            glControl1.Flags = OpenTK.Windowing.Common.ContextFlags.Default;
-            glControl1.IsEventDriven = true;
-            glControl1.Location = new Point(6, 20);
-            glControl1.Name = "glControl1";
-            glControl1.Profile = OpenTK.Windowing.Common.ContextProfile.Core;
-            glControl1.Size = new Size(277, 284);
-            glControl1.TabIndex = 31;
-            glControl1.Text = "glControl1";
             // 
             // label9
             // 
@@ -564,7 +593,8 @@
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Controls.Add(tabPage5);
             tabControl1.Controls.Add(tabPage6);
-            tabControl1.Location = new Point(223, 30);
+            tabControl1.Controls.Add(tabPage7);
+            tabControl1.Location = new Point(223, 40);
             tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -996,182 +1026,23 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 26;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(groupBox11);
+            tabPage3.BackColor = Color.FromArgb(235, 235, 235);
             tabPage3.Controls.Add(groupBox3);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1528, 904);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Veriler";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            groupBox11.Controls.Add(label60);
-            groupBox11.Controls.Add(label59);
-            groupBox11.Controls.Add(label58);
-            groupBox11.Controls.Add(label57);
-            groupBox11.Controls.Add(label44);
-            groupBox11.Controls.Add(groupBox12);
-            groupBox11.Controls.Add(label2);
-            groupBox11.Controls.Add(label34);
-            groupBox11.Controls.Add(label33);
-            groupBox11.Location = new Point(738, 25);
-            groupBox11.Name = "groupBox11";
-            groupBox11.Size = new Size(776, 838);
-            groupBox11.TabIndex = 13;
-            groupBox11.TabStop = false;
-            groupBox11.Text = "Faydalı Yük Verileri";
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Font = new Font("Segoe UI", 14.25F);
-            label60.Location = new Point(516, 456);
-            label60.Name = "label60";
-            label60.Size = new Size(44, 25);
-            label60.TabIndex = 34;
-            label60.Text = "null";
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new Font("Segoe UI", 14.25F);
-            label59.Location = new Point(240, 506);
-            label59.Name = "label59";
-            label59.Size = new Size(44, 25);
-            label59.TabIndex = 33;
-            label59.Text = "null";
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.Font = new Font("Segoe UI", 14.25F);
-            label58.Location = new Point(240, 481);
-            label58.Name = "label58";
-            label58.Size = new Size(44, 25);
-            label58.TabIndex = 32;
-            label58.Text = "null";
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.Font = new Font("Segoe UI", 14.25F);
-            label57.Location = new Point(240, 456);
-            label57.Name = "label57";
-            label57.Size = new Size(44, 25);
-            label57.TabIndex = 31;
-            label57.Text = "null";
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Segoe UI", 14.25F);
-            label44.Location = new Point(347, 456);
-            label44.Name = "label44";
-            label44.Size = new Size(154, 25);
-            label44.TabIndex = 10;
-            label44.Text = "Görev Yükü Nem";
-            // 
-            // groupBox12
-            // 
-            groupBox12.Controls.Add(label39);
-            groupBox12.Controls.Add(textBox6);
-            groupBox12.Controls.Add(label40);
-            groupBox12.Controls.Add(textBox7);
-            groupBox12.Controls.Add(button15);
-            groupBox12.Controls.Add(pictureBox2);
-            groupBox12.Location = new Point(21, 22);
-            groupBox12.Name = "groupBox12";
-            groupBox12.Size = new Size(539, 408);
-            groupBox12.TabIndex = 9;
-            groupBox12.TabStop = false;
-            groupBox12.Text = "VideoCam";
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(394, 51);
-            label39.Name = "label39";
-            label39.Size = new Size(35, 15);
-            label39.TabIndex = 10;
-            label39.Text = "PORT";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(433, 48);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 9;
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Location = new Point(394, 22);
-            label40.Name = "label40";
-            label40.Size = new Size(17, 15);
-            label40.TabIndex = 8;
-            label40.Text = "IP";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(433, 14);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 7;
-            // 
-            // button15
-            // 
-            button15.Location = new Point(394, 86);
-            button15.Name = "button15";
-            button15.Size = new Size(75, 23);
-            button15.TabIndex = 6;
-            button15.Text = "Connect";
-            button15.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(15, 22);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(373, 332);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F);
-            label2.Location = new Point(21, 506);
-            label2.Name = "label2";
-            label2.Size = new Size(176, 25);
-            label2.TabIndex = 8;
-            label2.Text = "Görev Yükü Boylam";
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Segoe UI", 14.25F);
-            label34.Location = new Point(21, 481);
-            label34.Name = "label34";
-            label34.Size = new Size(166, 25);
-            label34.TabIndex = 7;
-            label34.Text = "Görev Yükü Enlem";
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Segoe UI", 14.25F);
-            label33.Location = new Point(21, 456);
-            label33.Name = "label33";
-            label33.Size = new Size(192, 25);
-            label33.TabIndex = 6;
-            label33.Text = "Görev Yükü GPS İrtifa";
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.FromArgb(235, 235, 235);
+            tabPage2.Controls.Add(button7);
+            tabPage2.Controls.Add(button6);
             tabPage2.Controls.Add(comboBox8);
             tabPage2.Controls.Add(button21);
             tabPage2.Controls.Add(label63);
@@ -1202,7 +1073,26 @@
             tabPage2.Size = new Size(1528, 904);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "GPS ve Lokasyon";
-            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(586, 648);
+            button7.Name = "button7";
+            button7.Size = new Size(75, 62);
+            button7.TabIndex = 59;
+            button7.Text = "TEST ET 2";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(586, 580);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 62);
+            button6.TabIndex = 58;
+            button6.Text = "TEST ET AQ";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // comboBox8
             // 
@@ -1447,48 +1337,81 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(groupBox10);
+            tabPage4.BackColor = Color.FromArgb(235, 235, 235);
+            tabPage4.Controls.Add(textBox13);
+            tabPage4.Controls.Add(textBox11);
+            tabPage4.Controls.Add(textBox10);
+            tabPage4.Controls.Add(button26);
+            tabPage4.Controls.Add(button25);
+            tabPage4.Controls.Add(button17);
+            tabPage4.Controls.Add(webView21);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1528, 904);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            groupBox10.Controls.Add(button18);
-            groupBox10.Controls.Add(textBox11);
-            groupBox10.Controls.Add(textBox13);
-            groupBox10.Location = new Point(3, 8);
-            groupBox10.Name = "groupBox10";
-            groupBox10.Size = new Size(789, 575);
-            groupBox10.TabIndex = 16;
-            groupBox10.TabStop = false;
-            groupBox10.Text = "Modelleme";
-            // 
-            // button18
-            // 
-            button18.Location = new Point(210, 320);
-            button18.Name = "button18";
-            button18.Size = new Size(171, 89);
-            button18.TabIndex = 20;
-            button18.Text = "button18";
-            button18.UseVisualStyleBackColor = true;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(104, 325);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 23);
-            textBox11.TabIndex = 19;
             // 
             // textBox13
             // 
-            textBox13.Location = new Point(104, 354);
+            textBox13.Location = new Point(720, 853);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(100, 23);
-            textBox13.TabIndex = 18;
+            textBox13.TabIndex = 6;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(614, 851);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(100, 23);
+            textBox11.TabIndex = 5;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(508, 851);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(100, 23);
+            textBox10.TabIndex = 4;
+            // 
+            // button26
+            // 
+            button26.Location = new Point(359, 842);
+            button26.Name = "button26";
+            button26.Size = new Size(143, 32);
+            button26.TabIndex = 3;
+            button26.Text = "Veri yolla";
+            button26.UseVisualStyleBackColor = true;
+            button26.Click += button26_Click;
+            // 
+            // button25
+            // 
+            button25.Location = new Point(210, 842);
+            button25.Name = "button25";
+            button25.Size = new Size(143, 32);
+            button25.TabIndex = 2;
+            button25.Text = "Websocketi aç";
+            button25.UseVisualStyleBackColor = true;
+            button25.Click += button25_Click;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(46, 842);
+            button17.Name = "button17";
+            button17.Size = new Size(143, 32);
+            button17.TabIndex = 1;
+            button17.Text = "Siteyi aç";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click_1;
+            // 
+            // webView21
+            // 
+            webView21.AllowExternalDrop = true;
+            webView21.CreationProperties = null;
+            webView21.DefaultBackgroundColor = Color.White;
+            webView21.Location = new Point(22, 16);
+            webView21.Name = "webView21";
+            webView21.Size = new Size(1479, 820);
+            webView21.TabIndex = 0;
+            webView21.ZoomFactor = 1D;
             // 
             // tabPage5
             // 
@@ -1575,9 +1498,192 @@
             tabPage6.Text = "BOŞŞŞ";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // tabPage7
+            // 
+            tabPage7.Controls.Add(groupBox11);
+            tabPage7.Location = new Point(4, 24);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Size = new Size(1528, 904);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "tabPage7";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            groupBox11.Controls.Add(button27);
+            groupBox11.Controls.Add(label60);
+            groupBox11.Controls.Add(label59);
+            groupBox11.Controls.Add(label58);
+            groupBox11.Controls.Add(label57);
+            groupBox11.Controls.Add(label44);
+            groupBox11.Controls.Add(groupBox12);
+            groupBox11.Controls.Add(label2);
+            groupBox11.Controls.Add(label34);
+            groupBox11.Controls.Add(label33);
+            groupBox11.Location = new Point(103, 66);
+            groupBox11.Name = "groupBox11";
+            groupBox11.Size = new Size(776, 838);
+            groupBox11.TabIndex = 14;
+            groupBox11.TabStop = false;
+            groupBox11.Text = "Faydalı Yük Verileri";
+            // 
+            // button27
+            // 
+            button27.Location = new Point(21, 548);
+            button27.Name = "button27";
+            button27.Size = new Size(75, 23);
+            button27.TabIndex = 35;
+            button27.Text = "veriyi çek";
+            button27.UseVisualStyleBackColor = true;
+            // 
+            // label60
+            // 
+            label60.AutoSize = true;
+            label60.Font = new Font("Segoe UI", 14.25F);
+            label60.Location = new Point(516, 456);
+            label60.Name = "label60";
+            label60.Size = new Size(44, 25);
+            label60.TabIndex = 34;
+            label60.Text = "null";
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new Font("Segoe UI", 14.25F);
+            label59.Location = new Point(240, 506);
+            label59.Name = "label59";
+            label59.Size = new Size(44, 25);
+            label59.TabIndex = 33;
+            label59.Text = "null";
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Font = new Font("Segoe UI", 14.25F);
+            label58.Location = new Point(240, 481);
+            label58.Name = "label58";
+            label58.Size = new Size(44, 25);
+            label58.TabIndex = 32;
+            label58.Text = "null";
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.Font = new Font("Segoe UI", 14.25F);
+            label57.Location = new Point(240, 456);
+            label57.Name = "label57";
+            label57.Size = new Size(44, 25);
+            label57.TabIndex = 31;
+            label57.Text = "null";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Segoe UI", 14.25F);
+            label44.Location = new Point(347, 456);
+            label44.Name = "label44";
+            label44.Size = new Size(154, 25);
+            label44.TabIndex = 10;
+            label44.Text = "Görev Yükü Nem";
+            // 
+            // groupBox12
+            // 
+            groupBox12.Controls.Add(label39);
+            groupBox12.Controls.Add(textBox6);
+            groupBox12.Controls.Add(label40);
+            groupBox12.Controls.Add(textBox7);
+            groupBox12.Controls.Add(button15);
+            groupBox12.Controls.Add(pictureBox2);
+            groupBox12.Location = new Point(21, 22);
+            groupBox12.Name = "groupBox12";
+            groupBox12.Size = new Size(539, 408);
+            groupBox12.TabIndex = 9;
+            groupBox12.TabStop = false;
+            groupBox12.Text = "VideoCam";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(394, 51);
+            label39.Name = "label39";
+            label39.Size = new Size(35, 15);
+            label39.TabIndex = 10;
+            label39.Text = "PORT";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(433, 48);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 9;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(394, 22);
+            label40.Name = "label40";
+            label40.Size = new Size(17, 15);
+            label40.TabIndex = 8;
+            label40.Text = "IP";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(433, 14);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(100, 23);
+            textBox7.TabIndex = 7;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(394, 86);
+            button15.Name = "button15";
+            button15.Size = new Size(75, 23);
+            button15.TabIndex = 6;
+            button15.Text = "Connect";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(15, 22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(373, 332);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F);
+            label2.Location = new Point(21, 506);
+            label2.Name = "label2";
+            label2.Size = new Size(176, 25);
+            label2.TabIndex = 8;
+            label2.Text = "Görev Yükü Boylam";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Segoe UI", 14.25F);
+            label34.Location = new Point(21, 481);
+            label34.Name = "label34";
+            label34.Size = new Size(166, 25);
+            label34.TabIndex = 7;
+            label34.Text = "Görev Yükü Enlem";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Segoe UI", 14.25F);
+            label33.Location = new Point(21, 456);
+            label33.Name = "label33";
+            label33.Size = new Size(192, 25);
+            label33.TabIndex = 6;
+            label33.Text = "Görev Yükü GPS İrtifa";
+            // 
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(button18);
             panel1.Controls.Add(label22);
             panel1.Controls.Add(label16);
             panel1.Controls.Add(button16);
@@ -1588,26 +1694,41 @@
             panel1.Size = new Size(234, 923);
             panel1.TabIndex = 23;
             // 
+            // button18
+            // 
+            button18.FlatAppearance.BorderColor = Color.Silver;
+            button18.FlatAppearance.MouseDownBackColor = Color.Gray;
+            button18.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button18.Location = new Point(-6, 212);
+            button18.Name = "button18";
+            button18.Size = new Size(249, 70);
+            button18.TabIndex = 25;
+            button18.Text = "3D Simulasyon";
+            button18.UseVisualStyleBackColor = false;
+            button18.Click += button18_Click;
+            // 
             // label22
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Tw Cen MT Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.Location = new Point(4, 836);
+            label22.Location = new Point(4, 862);
             label22.Name = "label22";
             label22.Size = new Size(195, 31);
             label22.TabIndex = 24;
-            label22.Text = "Yer Istasyonu Yazılımı";
+            label22.Text = "Yer Istasyonu Yazılımı\r\n";
             label22.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Tw Cen MT Condensed Extra Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(4, 776);
+            label16.Font = new Font("Tw Cen MT Condensed Extra Bold", 19F);
+            label16.Location = new Point(4, 802);
             label16.Name = "label16";
-            label16.Size = new Size(223, 96);
+            label16.Size = new Size(238, 93);
             label16.TabIndex = 23;
-            label16.Text = "MISYA ORTA IRTIFA \r\nROKET TAKIMI\r\n\r\n";
+            label16.Text = "MISYA YÜKSEK IRTIFA \r\nROKET TAKIMI\r\n\r\n";
             label16.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button16
@@ -1739,6 +1860,16 @@
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;
             // 
+            // timer1
+            // 
+            timer1.Interval = 500;
+            timer1.Tick += timer1_Tick;
+            // 
+            // timer2
+            // 
+            timer2.Interval = 500;
+            timer2.Tick += timer2_Tick_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1756,6 +1887,7 @@
             Load += Form1_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -1775,20 +1907,21 @@
             groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             tabPage3.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
+            tabPage5.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)videoBox).EndInit();
+            tabPage7.ResumeLayout(false);
             groupBox11.ResumeLayout(false);
             groupBox11.PerformLayout();
             groupBox12.ResumeLayout(false);
             groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            tabPage4.ResumeLayout(false);
-            groupBox10.ResumeLayout(false);
-            groupBox10.PerformLayout();
-            tabPage5.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)videoBox).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -1807,7 +1940,6 @@
         private Label labelStatue;
         private GroupBox groupBox3;
         private Label label9;
-        private Label label2;
         private Label label13;
         private TabControl tabControl1;
         private TabPage tabPage1;
@@ -1832,22 +1964,11 @@
         private ComboBox comboBox4;
         private Label label26;
         private Panel panel1;
-        private GroupBox groupBox10;
         private Label label27;
         private ComboBox comboBox5;
         private Label label28;
         private Label label29;
         private Button button14;
-        private GroupBox groupBox11;
-        private Label label33;
-        private Label label34;
-        private GroupBox groupBox12;
-        private Label label39;
-        private TextBox textBox6;
-        private Label label40;
-        private TextBox textBox7;
-        private Button button15;
-        private PictureBox pictureBox2;
         private GroupBox groupBox1;
         private Label label4;
         private TextBox textBox2;
@@ -1855,14 +1976,6 @@
         private TextBox textBox1;
         private Button button2;
         private PictureBox videoBox;
-        private Button button18;
-        private TextBox textBox11;
-        private TextBox textBox13;
-        private Label label60;
-        private Label label59;
-        private Label label58;
-        private Label label57;
-        private Label label44;
         private ComboBox comboBox7;
         private Button button3;
         private Label label5;
@@ -1920,8 +2033,6 @@
         private Label label31;
         private Label label30;
         private Label label6;
-        private OpenTK.WinForms.GLControl glControl1;
-        private Panel panel3;
         private Button button16;
         private PictureBox pictureBox4;
         private GroupBox groupBox2;
@@ -1943,5 +2054,37 @@
         private PictureBox pictureBox6;
         private TextBox textBox9;
         private TextBox textBox8;
+        private GMap.NET.WindowsForms.GMapControl gMapControl2;
+        private Button button6;
+        private System.Windows.Forms.Timer timer1;
+        private Button button7;
+        private Button button17;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private Button button18;
+        private Button button25;
+        private Button button26;
+        private TextBox textBox10;
+        private TextBox textBox13;
+        private TextBox textBox11;
+        private TabPage tabPage7;
+        private GroupBox groupBox11;
+        private Button button27;
+        private Label label60;
+        private Label label59;
+        private Label label58;
+        private Label label57;
+        private Label label44;
+        private GroupBox groupBox12;
+        private Label label39;
+        private TextBox textBox6;
+        private Label label40;
+        private TextBox textBox7;
+        private Button button15;
+        private PictureBox pictureBox2;
+        private Label label2;
+        private Label label34;
+        private Label label33;
+        private System.Windows.Forms.Timer timer2;
+        private PictureBox pictureBox7;
     }
 }
